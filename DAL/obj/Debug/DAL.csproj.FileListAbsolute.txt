@@ -1,0 +1,10 @@
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\bin\Debug\DAL.dll
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\bin\Debug\DAL.pdb
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\bin\Debug\DTO.dll
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\bin\Debug\Guna.UI2.dll
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\bin\Debug\DTO.pdb
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\obj\Debug\DAL.dll
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DAL\obj\Debug\DAL.pdb

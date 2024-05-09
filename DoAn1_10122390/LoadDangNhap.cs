@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace DoAn1_10122390
 {
     public partial class LoadDangNhap : Form
     {
-        public LoadDangNhap()
+        private TaiKhoanDTO olodo2;
+        public LoadDangNhap(TaiKhoanDTO olodo)
         {
             InitializeComponent();
+            olodo2 = olodo;
         }
 
         private void LoadDangNhap_Load(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace DoAn1_10122390
         {
             if (guna2ProgressBar1.Value < 100)
             {
-                guna2ProgressBar1.Value += 5;
+                guna2ProgressBar1.Value += 10;
                 label2.Text = guna2ProgressBar1.Value.ToString() + "%";
 
             }
@@ -34,7 +37,7 @@ namespace DoAn1_10122390
             {
                 this.Hide();
                 timer1.Stop();
-                Menu menu = new Menu();
+                Menu menu = new Menu(olodo2);
                 menu.ShowDialog();
 
             }

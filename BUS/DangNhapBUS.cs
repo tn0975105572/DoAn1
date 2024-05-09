@@ -7,6 +7,7 @@ using DTO;
 using DAL;
 using System.Data;
 using System.Security.Policy;
+using System.Data.SqlClient;
 
 namespace BUS
 {
@@ -14,25 +15,25 @@ namespace BUS
     {
 
         DAL_DangNhap DAL_DangNhap = new DAL_DangNhap();
-    
+        
         public DataTable getData(string sql)
         {
             return DAL_DangNhap.getData(sql);
         }
-        public int kiemtramatrung(string ma)
-        {
-            return DAL_DangNhap.Check(ma);
-        }
+        //public int kiemtramatrung(string ma)
+        //{
+        //    return DAL_DangNhap.Check(ma);
+        //}
 
-        public string KiemTraDangNhap(string Taikhoan, string Matkhau)
+        public string KiemTraDangNhap(TaiKhoanDTO taiKhoan)
         {
-            if (string.IsNullOrEmpty(Taikhoan) || string.IsNullOrEmpty(Matkhau))
+            if (string.IsNullOrEmpty(taiKhoan.Taikhoan) || string.IsNullOrEmpty(taiKhoan.Matkhau))
             {
-                throw new Exception("Tên đăng nhập và mật khẩu không được để trống.");
+                return"Tên đăng nhập và mật khẩu không được để trống.";
             }
             else
             {
-                bool isAuthenticated = DAL_DangNhap.KiemTraDangNhap(Taikhoan, Matkhau);
+                bool isAuthenticated = DAL_DangNhap.KiemTraDangNhap(taiKhoan);
 
                 if (!isAuthenticated)
                 {

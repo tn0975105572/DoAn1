@@ -1,0 +1,295 @@
+USE [Doan1]
+GO
+/****** Object:  Table [dbo].[DonHang]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DonHang](
+	[MaDonHang] [int] NOT NULL,
+	[MaKhachHang] [int] NULL,
+	[NgayDat] [datetime] NULL,
+	[TongTien] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaDonHang] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedFunction [dbo].[DoanhThuTheoNgayThang]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [dbo].[DoanhThuTheoNgayThang]
+(
+    @NgayBatDau DATETIME,
+    @NgayKetThuc DATETIME
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT DH.MaDonHang, DH.NgayDat, DH.TongTien
+    FROM dbo.DonHang DH
+    WHERE DH.NgayDat >= @NgayBatDau AND DH.NgayDat <= @NgayKetThuc
+);
+GO
+/****** Object:  Table [dbo].[BangLuong]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[BangLuong](
+	[MaBangLuong] [int] NOT NULL,
+	[MaNhanVien] [int] NOT NULL,
+	[Thang] [int] NOT NULL,
+	[Nam] [int] NOT NULL,
+	[LuongCoBan] [float] NOT NULL,
+	[SoGioLamThem] [float] NULL,
+	[PhuCap] [float] NULL,
+	[TongLuong] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaBangLuong] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ChiTietChamCong]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChiTietChamCong](
+	[Macc] [int] NOT NULL,
+	[MaNhanVien] [int] NULL,
+	[NgayChamCong] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Macc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ChiTietDonHang]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChiTietDonHang](
+	[MaDonHang] [int] NOT NULL,
+	[MaSanPham] [int] NOT NULL,
+	[SoLuong] [int] NULL,
+	[Gia] [float] NULL,
+	[MaNhanVien] [int] NULL,
+	[MaGiamGia] [int] NULL,
+	[MaChiTietHoaDon] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_ChiTietDonHang] PRIMARY KEY CLUSTERED 
+(
+	[MaChiTietHoaDon] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonNhap]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonNhap](
+	[MaHoaDonNhap] [int] NOT NULL,
+	[MaNhaCungCap] [int] NOT NULL,
+	[MaSanPham] [int] NOT NULL,
+	[NgayNhap] [datetime] NULL,
+	[TongTien] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaHoaDonNhap] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhachHang](
+	[MaKhachHang] [int] NOT NULL,
+	[HoTen] [nvarchar](100) NULL,
+	[DiaChi] [nvarchar](200) NULL,
+	[SoDienThoai] [nvarchar](20) NULL,
+	[Email] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaKhachHang] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MaGiamGia]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MaGiamGia](
+	[MaGiamGia] [int] NOT NULL,
+	[GiaTri] [float] NULL,
+	[MoTa] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaGiamGia] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhaCungCap](
+	[MaNhaCungCap] [int] NOT NULL,
+	[TenNhaCungCap] [nvarchar](200) NULL,
+	[DiaChi] [nvarchar](200) NULL,
+	[SoDienThoai] [nvarchar](20) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaNhaCungCap] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien](
+	[MaNhanVien] [int] NOT NULL,
+	[HoTen] [nvarchar](100) NULL,
+	[GioiTinh] [nvarchar](10) NULL,
+	[NgaySinh] [date] NULL,
+	[DiaChi] [nvarchar](200) NULL,
+	[SoDienThoai] [nvarchar](20) NULL,
+	[Email] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaNhanVien] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SanPham]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SanPham](
+	[MaSanPham] [int] NOT NULL,
+	[TenSanPham] [nvarchar](200) NULL,
+	[Gia] [float] NULL,
+	[MoTa] [nvarchar](max) NULL,
+	[MaNhaCungCap] [int] NULL,
+	[SoLuong] [int] NULL,
+	[HinhAnh] [image] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MaSanPham] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TaiKhoan]    Script Date: 13/04/2024 3:27:51 CH ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TaiKhoan](
+	[Email] [nchar](50) NULL,
+	[TaiKhoan] [nchar](50) NOT NULL,
+	[MatKhau] [nvarchar](50) NULL,
+	[SDT] [nchar](10) NULL,
+	[NgaySinh] [datetime] NULL,
+ CONSTRAINT [PK_TaiKhoan] PRIMARY KEY CLUSTERED 
+(
+	[TaiKhoan] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[BangLuong] ([MaBangLuong], [MaNhanVien], [Thang], [Nam], [LuongCoBan], [SoGioLamThem], [PhuCap], [TongLuong]) VALUES (1, 1, 3, 2024, 5000000, 10, 1000000, 6000000)
+INSERT [dbo].[BangLuong] ([MaBangLuong], [MaNhanVien], [Thang], [Nam], [LuongCoBan], [SoGioLamThem], [PhuCap], [TongLuong]) VALUES (2, 2, 3, 2024, 4500000, 5, 800000, 5300000)
+GO
+INSERT [dbo].[ChiTietChamCong] ([Macc], [MaNhanVien], [NgayChamCong]) VALUES (1, 1, CAST(N'2024-03-01' AS Date))
+INSERT [dbo].[ChiTietChamCong] ([Macc], [MaNhanVien], [NgayChamCong]) VALUES (2, 2, CAST(N'2024-03-02' AS Date))
+GO
+SET IDENTITY_INSERT [dbo].[ChiTietDonHang] ON 
+
+INSERT [dbo].[ChiTietDonHang] ([MaDonHang], [MaSanPham], [SoLuong], [Gia], [MaNhanVien], [MaGiamGia], [MaChiTietHoaDon]) VALUES (1, 1, 12, 250000, 1, 1, 1)
+INSERT [dbo].[ChiTietDonHang] ([MaDonHang], [MaSanPham], [SoLuong], [Gia], [MaNhanVien], [MaGiamGia], [MaChiTietHoaDon]) VALUES (2, 2, 1, 700000, 2, NULL, 2)
+SET IDENTITY_INSERT [dbo].[ChiTietDonHang] OFF
+GO
+INSERT [dbo].[DonHang] ([MaDonHang], [MaKhachHang], [NgayDat], [TongTien]) VALUES (1, 1, CAST(N'2024-03-01T00:00:00.000' AS DateTime), 500000)
+INSERT [dbo].[DonHang] ([MaDonHang], [MaKhachHang], [NgayDat], [TongTien]) VALUES (2, 2, CAST(N'2024-03-02T00:00:00.000' AS DateTime), 700000)
+GO
+INSERT [dbo].[KhachHang] ([MaKhachHang], [HoTen], [DiaChi], [SoDienThoai], [Email]) VALUES (1, N'Nguyễn Văn Dũng', N'Hưng Yên', N'0987658263', N'ducon@gmail.com')
+INSERT [dbo].[KhachHang] ([MaKhachHang], [HoTen], [DiaChi], [SoDienThoai], [Email]) VALUES (2, N'Nguyễn Thị Nhung', N'Hà Nội', N'0976826374', N'nhung@gmail.com')
+INSERT [dbo].[KhachHang] ([MaKhachHang], [HoTen], [DiaChi], [SoDienThoai], [Email]) VALUES (3, N'Chu Tuấn Anh', N'Hà Nội', N'0983725483', N'anhdz@gmail.com')
+INSERT [dbo].[KhachHang] ([MaKhachHang], [HoTen], [DiaChi], [SoDienThoai], [Email]) VALUES (4, N'Đào Ngọc Anh', N'Nam Định', N'0398762583', N'123@gmail.com')
+GO
+INSERT [dbo].[MaGiamGia] ([MaGiamGia], [GiaTri], [MoTa]) VALUES (1, 100000, N'Nhân dịp khai trương cửa hàng mới')
+INSERT [dbo].[MaGiamGia] ([MaGiamGia], [GiaTri], [MoTa]) VALUES (2, 25000, N'Giảm giá 25000 cho đơn hàng kế tiếp với mã 2')
+INSERT [dbo].[MaGiamGia] ([MaGiamGia], [GiaTri], [MoTa]) VALUES (3, 10000, N'Giảm giá 10000 cho đơn hàng kế tiếp với mã 3')
+GO
+INSERT [dbo].[NhaCungCap] ([MaNhaCungCap], [TenNhaCungCap], [DiaChi], [SoDienThoai]) VALUES (1, N'Công Ty TNHH Điện Tử ABECO Việt Nam', N'Số 48, Đường Hoa Bằng Lăng, Khu Đô Thị Long Việt, Thị Trấn Quang Minh, Huyện Mê Linh, Hà Nội', N' 033 4050129')
+INSERT [dbo].[NhaCungCap] ([MaNhaCungCap], [TenNhaCungCap], [DiaChi], [SoDienThoai]) VALUES (2, N'Công Ty TNHH GENESISTEK VINA', N'D9-26, Đường D9, The Manhattan, Khu đô thị Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, Tp. Hồ Chí Minh', N' 0902430821')
+INSERT [dbo].[NhaCungCap] ([MaNhaCungCap], [TenNhaCungCap], [DiaChi], [SoDienThoai]) VALUES (3, N'Công Ty TNHH Điện Tử Minh Hà', N'Tầng 3, Số 1, Ngõ 120 Trường Chinh, P. Phương Mai, Q. Đống Đa, Hà Nội', N'0965 891 166')
+INSERT [dbo].[NhaCungCap] ([MaNhaCungCap], [TenNhaCungCap], [DiaChi], [SoDienThoai]) VALUES (4, N'Công Ty TNHH SI YUAN TECH', N'Lô G3, Đường N5, KCN Châu Sơn, P. Châu Sơn, Tp. Phủ Lý, Hà Nam', N'08123 96 336')
+INSERT [dbo].[NhaCungCap] ([MaNhaCungCap], [TenNhaCungCap], [DiaChi], [SoDienThoai]) VALUES (5, N'Công ty cổ phần điện tử tự động Nguyên Phi', N'170 Bùi Hữu Nghĩa, P. 8, Q. 5, Tp. Hồ Chí Minh', N'0396845041')
+GO
+INSERT [dbo].[NhanVien] ([MaNhanVien], [HoTen], [GioiTinh], [NgaySinh], [DiaChi], [SoDienThoai], [Email]) VALUES (1, N'ChuTuanVu', N'Nam', CAST(N'2004-12-12' AS Date), N'HungYen', N'0948726482', N'chuvu@gmail.com')
+INSERT [dbo].[NhanVien] ([MaNhanVien], [HoTen], [GioiTinh], [NgaySinh], [DiaChi], [SoDienThoai], [Email]) VALUES (2, N'DoDucThuy', N'Nam', CAST(N'2002-01-30' AS Date), N'HaNoi', N'0398764916', N'ducthuy@gmail.com')
+INSERT [dbo].[NhanVien] ([MaNhanVien], [HoTen], [GioiTinh], [NgaySinh], [DiaChi], [SoDienThoai], [Email]) VALUES (3, N'NguyenQuocANh', N'Nam', CAST(N'2004-10-23' AS Date), N'HaGiang', N'0234859392', N'anh23@gmail.com')
+INSERT [dbo].[NhanVien] ([MaNhanVien], [HoTen], [GioiTinh], [NgaySinh], [DiaChi], [SoDienThoai], [Email]) VALUES (4, N'HoangVietAnh', N'Nam', CAST(N'2005-12-12' AS Date), N'YenBai', N'0387563841', N'vietanh23@gmail.com')
+INSERT [dbo].[NhanVien] ([MaNhanVien], [HoTen], [GioiTinh], [NgaySinh], [DiaChi], [SoDienThoai], [Email]) VALUES (5, N'HoangThiKimTuyen', N'Nu', CAST(N'2004-03-15' AS Date), N'HungYen', N'098726371', N'kimtuy@gmail.com')
+GO
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [MoTa], [MaNhaCungCap], [SoLuong], [HinhAnh]) VALUES (1, N'ESP8266', 100000, N'Hack wifi span wifi và làm 1 số thí nghiệm khoa học', 1, 100, NULL)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [MoTa], [MaNhaCungCap], [SoLuong], [HinhAnh]) VALUES (2, N'ARDUINO UNO R3 DÁN CHÍP LGT8F328', 80000, N'Arduino Uno R3 là board mạch tiêu biểu nhất trong các board mạch của Arduino. Từ người mới bắt đầu làm quen cho đến người dùng đã có kinh nghiệm thường sẽ chọn một bộ Uno R3 cho các ứng dụng của mình', 2, 350, NULL)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [MoTa], [MaNhaCungCap], [SoLuong], [HinhAnh]) VALUES (3, N'ARDUINO NANO CỔNG USB TYPE-C', 150000, N' ARDUINO NANO CỔNG USB TYPE-C TỔNG QUAN SẢN PHẨM: Arduino Nano USB Type-C ATmega328P là một phiên bản nhỏ gọn của bo mạch phát triển Arduino. Nó kết hợp vi xử lý ATmega328P, giao tiếp USB Type-C và các tính năng khác để cung cấp một nền tảng', 1, 1321, NULL)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [MoTa], [MaNhaCungCap], [SoLuong], [HinhAnh]) VALUES (4, N'RASPBERRY PI 3 MODEL B+ CHÍNH HÃNG', 1000000, N'Mô Tả Sản Phẩm Raspberry Pi 3 Model B+ Raspberry Pi là board máy tính nhúng được sử dụng nhiều nhất hiện nay, ngoài việc sử dụng như một máy tính bình thường chạy hệ điều hành Linux hoặc Windows 10 IoT, máy còn có khả năng xuất tín hiệu ra 40 chân GPIO giúp bạn có thể giao tiếp', 3, 12, NULL)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [MoTa], [MaNhaCungCap], [SoLuong], [HinhAnh]) VALUES (5, N'RELAY 4 KÊNH CÁCH LY (B0505S)', 150000, N'Module Relay sử dụng IC B0505S nên cách ly tuyệt đối relay với nguồn
+
+Module Relay sử dụng IC B0505S được thiết kế nhỏ gọn, tích hợp các jump cái và jump đực cho các bạn dễ dàng kết nối điều khiển. Ngoài ra các jump điều khiển trên module được thiết kế giống với module RF 4 kênh. Thích hợp cho các ứng dụng điều khiển thiết bị từ xa như điều khiển đèn, quạt…trong nhà. Module tiêu thụ điện năng thấp mà lại điều khiển được tải cao nên các bạn sẽ không lo về giá điện hàng tháng. Trên mạch có header 3 jack cắm, kết nối dễ dàng với tải mà không phải tháo lắp rườm rà', 2, 145, NULL)
+GO
+INSERT [dbo].[TaiKhoan] ([Email], [TaiKhoan], [MatKhau], [SDT], [NgaySinh]) VALUES (N'123                                               ', N'123                                               ', N'123', N'123       ', CAST(N'2004-06-02T00:00:00.000' AS DateTime))
+INSERT [dbo].[TaiKhoan] ([Email], [TaiKhoan], [MatKhau], [SDT], [NgaySinh]) VALUES (N'admin                                             ', N'admin                                             ', N'admin                                             ', N'          ', CAST(N'2004-06-02T00:00:00.000' AS DateTime))
+INSERT [dbo].[TaiKhoan] ([Email], [TaiKhoan], [MatKhau], [SDT], [NgaySinh]) VALUES (N'tn0975105572@gmail.com                            ', N'Chuvu                                             ', N'Chuvu942004', N'0849838726', CAST(N'2004-06-02T00:00:00.000' AS DateTime))
+INSERT [dbo].[TaiKhoan] ([Email], [TaiKhoan], [MatKhau], [SDT], [NgaySinh]) VALUES (N'longdaica@gmail.com                               ', N'duylong                                           ', N'longdaica1', N'0975105572', CAST(N'2004-06-02T00:00:00.000' AS DateTime))
+INSERT [dbo].[TaiKhoan] ([Email], [TaiKhoan], [MatKhau], [SDT], [NgaySinh]) VALUES (N'duytu@gmail.com                                   ', N'duytu                                             ', N'tu123456                                          ', N'0931283278', CAST(N'2004-06-02T00:00:00.000' AS DateTime))
+GO
+ALTER TABLE [dbo].[BangLuong]  WITH CHECK ADD  CONSTRAINT [FK_BangLuong_NhanVien] FOREIGN KEY([MaNhanVien])
+REFERENCES [dbo].[NhanVien] ([MaNhanVien])
+GO
+ALTER TABLE [dbo].[BangLuong] CHECK CONSTRAINT [FK_BangLuong_NhanVien]
+GO
+ALTER TABLE [dbo].[ChiTietChamCong]  WITH CHECK ADD FOREIGN KEY([MaNhanVien])
+REFERENCES [dbo].[NhanVien] ([MaNhanVien])
+GO
+ALTER TABLE [dbo].[ChiTietDonHang]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietDonHang_DonHang] FOREIGN KEY([MaDonHang])
+REFERENCES [dbo].[DonHang] ([MaDonHang])
+GO
+ALTER TABLE [dbo].[ChiTietDonHang] CHECK CONSTRAINT [FK_ChiTietDonHang_DonHang]
+GO
+ALTER TABLE [dbo].[ChiTietDonHang]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietDonHang_SanPham] FOREIGN KEY([MaSanPham])
+REFERENCES [dbo].[SanPham] ([MaSanPham])
+GO
+ALTER TABLE [dbo].[ChiTietDonHang] CHECK CONSTRAINT [FK_ChiTietDonHang_SanPham]
+GO
+ALTER TABLE [dbo].[DonHang]  WITH CHECK ADD FOREIGN KEY([MaKhachHang])
+REFERENCES [dbo].[KhachHang] ([MaKhachHang])
+GO
+ALTER TABLE [dbo].[HoaDonNhap]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonNhap_NhaCungCap] FOREIGN KEY([MaNhaCungCap])
+REFERENCES [dbo].[NhaCungCap] ([MaNhaCungCap])
+GO
+ALTER TABLE [dbo].[HoaDonNhap] CHECK CONSTRAINT [FK_HoaDonNhap_NhaCungCap]
+GO
+ALTER TABLE [dbo].[HoaDonNhap]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonNhap_SanPham] FOREIGN KEY([MaSanPham])
+REFERENCES [dbo].[SanPham] ([MaSanPham])
+GO
+ALTER TABLE [dbo].[HoaDonNhap] CHECK CONSTRAINT [FK_HoaDonNhap_SanPham]
+GO
+ALTER TABLE [dbo].[SanPham]  WITH CHECK ADD FOREIGN KEY([MaNhaCungCap])
+REFERENCES [dbo].[NhaCungCap] ([MaNhaCungCap])
+GO

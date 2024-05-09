@@ -11,17 +11,19 @@ using DTO;
 using BUS;
 
 
+
 namespace DoAn1_10122390
 {
     public partial class DangNhap : Form
     {
+        private TaiKhoanDTO olodo1 = new TaiKhoanDTO();
        
         public DangNhap()
         {
             InitializeComponent();
             
         }
-
+       
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -37,7 +39,7 @@ namespace DoAn1_10122390
         }
         public void DangNhap_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         public void btdangnhap_Click(object sender, EventArgs e)
@@ -45,15 +47,18 @@ namespace DoAn1_10122390
             string taiKhoan = tbtendangnhap.Text;
             string matKhau = tbmk.Text;
             
+
             try
             {
                 BUS_DangNhap busDangNhap = new BUS_DangNhap();
-                string ketQua = busDangNhap.KiemTraDangNhap(taiKhoan, matKhau);
+                TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO { Taikhoan = taiKhoan, Matkhau = matKhau };
+                string ketQua = busDangNhap.KiemTraDangNhap(taiKhoanDTO);
 
                 if (ketQua == "Đăng nhập thành công.")
                 {
-                    MessageBox.Show("Đăng nhập thành công!", "THÔNG BÁO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDangNhap menu = new LoadDangNhap();
+                    olodo1.Taikhoan = tbtendangnhap.Text;
+                    this.Hide();
+                    LoadDangNhap menu = new LoadDangNhap(olodo1);
                     menu.ShowDialog();
                     this.Hide();
                 }
@@ -122,6 +127,25 @@ namespace DoAn1_10122390
             this.Hide();
             DangKy dk = new DangKy();
             dk.ShowDialog();  
+        }
+
+        private void llb1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            QuenMatKhau qmk = new QuenMatKhau();
+            qmk.ShowDialog();
+        }
+
+        private void anhdaidien_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu dk = new Menu(olodo1);
+            dk.ShowDialog();
+        }
+
+        private void tbmk_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

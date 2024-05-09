@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -23,6 +18,8 @@ namespace DAL
             kn = new SqlConnection(diachi);
             if (kn.State == ConnectionState.Closed)
                 kn.Open();
+            cm = kn.CreateCommand();
+
         }
         public void ngatketnoi()
         {
@@ -54,7 +51,19 @@ namespace DAL
             dtadt.Fill(dttb);
             ngatketnoi();
             return dttb;
+
         }
+
+
+        public int LayGiaTri(string sql)
+        {
+            ketnoi();
+            cm.CommandText = sql;
+            int giaTri = (int)cm.ExecuteScalar();
+            ngatketnoi();
+            return giaTri;
+        }
+
         public int KiemTraMaTrung(string ma, string sql)
         {
             ketnoi();

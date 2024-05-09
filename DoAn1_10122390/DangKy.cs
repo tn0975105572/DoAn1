@@ -98,7 +98,7 @@ namespace DoAn1_10122390
 
             if (result == DialogResult.OK)
             {
-                Close();
+                Application.Exit();
             }
         }
 

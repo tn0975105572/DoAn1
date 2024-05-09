@@ -18,6 +18,11 @@ namespace BUS
         {
             return sp.getData();
         }
+
+        public DataTable Lay()
+        {
+            return sp.Lay();
+        }
         public DataTable getData1()
         {
             return sp.getData1();

@@ -36,6 +36,10 @@
     <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
@@ -114,6 +118,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -170,6 +175,12 @@
     <Compile Include="chucnang\KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,10 +205,10 @@
     <Compile Include="chucnang\NhaCungCap.Designer.cs">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="MUA.cs">
+    <Compile Include="chucnang\MUA.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MUA.Designer.cs">
+    <Compile Include="chucnang\MUA.Designer.cs">
       <DependentUpon>MUA.cs</DependentUpon>
     </Compile>
     <Compile Include="NhapKho.cs">
@@ -249,6 +260,9 @@
     <EmbeddedResource Include="gioithieudanhgia.resx">
       <DependentUpon>gioithieudanhgia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoadDangNhap.resx">
       <DependentUpon>LoadDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,7 +272,7 @@
     <EmbeddedResource Include="chucnang\NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MUA.resx">
+    <EmbeddedResource Include="chucnang\MUA.resx">
       <DependentUpon>MUA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapKho.resx">
@@ -470,6 +484,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\muahang2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mua2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muahang3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mua3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

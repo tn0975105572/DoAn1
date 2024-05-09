@@ -96,7 +96,7 @@
             this.tbmk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbmk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbmk.Location = new System.Drawing.Point(52, 285);
-            this.tbmk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbmk.Name = "tbmk";
             this.tbmk.PasswordChar = '*';
             this.tbmk.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -214,7 +214,7 @@
             this.tbxnmk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbxnmk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxnmk.Location = new System.Drawing.Point(52, 326);
-            this.tbxnmk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxnmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbxnmk.Name = "tbxnmk";
             this.tbxnmk.PasswordChar = '\0';
             this.tbxnmk.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -237,7 +237,7 @@
             this.tbsdt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbsdt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbsdt.Location = new System.Drawing.Point(52, 238);
-            this.tbsdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbsdt.Margin = new System.Windows.Forms.Padding(4);
             this.tbsdt.Name = "tbsdt";
             this.tbsdt.PasswordChar = '\0';
             this.tbsdt.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -261,7 +261,7 @@
             this.tbtendangnhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbtendangnhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbtendangnhap.Location = new System.Drawing.Point(52, 142);
-            this.tbtendangnhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbtendangnhap.Margin = new System.Windows.Forms.Padding(4);
             this.tbtendangnhap.Name = "tbtendangnhap";
             this.tbtendangnhap.PasswordChar = '\0';
             this.tbtendangnhap.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -284,7 +284,7 @@
             this.tbemail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbemail.Location = new System.Drawing.Point(52, 190);
-            this.tbemail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbemail.Margin = new System.Windows.Forms.Padding(4);
             this.tbemail.Name = "tbemail";
             this.tbemail.PasswordChar = '\0';
             this.tbemail.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -314,7 +314,7 @@
             this.ptb7.Location = new System.Drawing.Point(2, 6);
             this.ptb7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb7.Name = "ptb7";
-            this.ptb7.Size = new System.Drawing.Size(44, 38);
+            this.ptb7.Size = new System.Drawing.Size(44, 47);
             this.ptb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb7.TabIndex = 74;
             this.ptb7.TabStop = false;

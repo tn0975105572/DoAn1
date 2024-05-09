@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham));
             this.dgvSanpham = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnbang = new Guna.UI2.WinForms.Guna2Panel();
             this.tbMacc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbSoluong = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -56,12 +62,6 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanpham)).BeginInit();
             this.pnbang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbSoluong)).BeginInit();
@@ -128,6 +128,48 @@
             this.dgvSanpham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvSanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanpham_CellClick);
             this.dgvSanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanpham_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaSanPham";
+            this.Column1.HeaderText = "Mã Sản Phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenSanPham";
+            this.Column2.HeaderText = "Tên SP";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Gia";
+            this.Column3.HeaderText = "Giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MoTa";
+            this.Column4.HeaderText = "Mô Tả";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaNhaCungCap";
+            this.Column5.HeaderText = "Mã Nhà Cung Cấp";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "SoLuong";
+            this.Column6.HeaderText = "Số Lượng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
             // 
             // pnbang
             // 
@@ -538,48 +580,6 @@
             this.guna2Button3.TabIndex = 62;
             this.guna2Button3.Text = "Nhập Kho";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaSanPham";
-            this.Column1.HeaderText = "Mã Sản Phẩm";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenSanPham";
-            this.Column2.HeaderText = "Tên SP";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Gia";
-            this.Column3.HeaderText = "Giá";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "MoTa";
-            this.Column4.HeaderText = "Mô Tả";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MaNhaCungCap";
-            this.Column5.HeaderText = "Mã Nhà Cung Cấp";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "SoLuong";
-            this.Column6.HeaderText = "Số Lượng";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
             // 
             // SanPham
             // 

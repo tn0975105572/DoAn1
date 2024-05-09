@@ -14,6 +14,12 @@ namespace DAL
             return csdl.getData(sql);
 
         }
+        public DataTable Lay()
+        {
+            string sql = "Select TenSanPham,Gia,SoLuong from SanPham";
+            return csdl.getData(sql);
+
+        }
 
         public DataTable getData1()
         {

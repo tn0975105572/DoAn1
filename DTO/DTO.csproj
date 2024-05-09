@@ -117,6 +117,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChamCongDTO.cs" />
+    <Compile Include="ChiTietDonHangDTO.cs" />
+    <Compile Include="DonHangDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
     <Compile Include="NhaCungCapDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />

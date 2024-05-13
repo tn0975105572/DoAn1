@@ -24,7 +24,7 @@ namespace DAL
         }
         public int LayMaKhachHangTiepTheo()
         {
-            string sql = "SELECT ISNULL(MAX(MaKhachHAng), 0) FROM KhachHang";
+            string sql = "SELECT ISNULL(MAX(MaKhachHang), 0) FROM KhachHang";
             int maKhachHangHienTai = csdl.LayGiaTri(sql);
             int maKhachHangMoi = maKhachHangHienTai + 1;
             return maKhachHangMoi;
@@ -36,9 +36,6 @@ namespace DAL
         }
         public bool ThemKhachHang(KhachHangDTO HK)
         {
-            //string sql = string.Format("Insert into KhachHang values('{0}','{1}', '{2}', '{3}','{4}')", HK.MaKH,HK.TenKH,HK.DiaChi,HK.SDT,HK.Email);
-            //csdl.chaycodesql(sql);
-            //return true;
             int maKhachHangMoi = LayMaKhachHangTiepTheo();
             string sql = string.Format("INSERT INTO KhachHang  VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
                 maKhachHangMoi, HK.TenKH, HK.DiaChi, HK.SDT, HK.Email);

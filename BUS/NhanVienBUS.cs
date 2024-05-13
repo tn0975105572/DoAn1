@@ -29,10 +29,7 @@ namespace BUS
         public string  Themnv(NhanVienDTO nv)
 
         {
-            //if (kiemtramatrung(nv.Manv) > 0)
-            //{
-            //    return "Nhân Viên này đã có!";
-            //}
+        
             if (them.Themnv(nv))
             {
                 return "Đăng kí thành công";

@@ -251,6 +251,7 @@ namespace DoAn1_10122390
         private void btnMua_Click(object sender, EventArgs e)
         {
             labeltieude.Text = "MUA HÀNG";
+            
             MUA sp = new MUA();
             if (panelmenu.Controls.Count == 0)
             {

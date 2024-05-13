@@ -66,46 +66,50 @@ namespace DoAn1_10122390
 
         public void bttThem_Click(object sender, EventArgs e)
         {
-            int count = dgvNhanvien.Rows.Count;
-
-            if (count > 0)
+           
+            if (string.IsNullOrEmpty(tbTen.Text) || cbGioiTinh.SelectedItem == null || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
             {
-                
-                int lastEmployeeID = Convert.ToInt32(dgvNhanvien.Rows[count - 1].Cells[0].Value);
-                int nextEmployeeID = lastEmployeeID + 1;
-                string newEmployeeID = nextEmployeeID.ToString();
-                tbMa.Text = newEmployeeID;
-
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                tbMa.Text = "1";
+                int count = dgvNhanvien.Rows.Count;
+
+                if (count > 0)
+                {
+                    int lastEmployeeID = Convert.ToInt32(dgvNhanvien.Rows[count - 1].Cells[0].Value);
+                    int nextEmployeeID = lastEmployeeID + 1;
+                    tbMa.Text = nextEmployeeID.ToString();
+                }
+                else
+                {
+                    tbMa.Text = "1";
+                }
+
+                NhanVienDTO nv = new NhanVienDTO();
+
+               
+                nv.Tennv = tbTen.Text;
+                nv.Gioitinh = cbGioiTinh.SelectedItem.ToString();
+                nv.Ngaysinh = dtNgay.Value;
+                nv.Diachi = tbDiachi.Text;
+                nv.Sodienthoai = tbSDT.Text;
+                nv.Email = tbEmail.Text;
+
+                string result = BUS.Themnv(nv);
+                if (result == "Đăng kí thành công")
+                {
+                    MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvNhanvien.DataSource = BUS.getData();
+                    ClearFields();
+                    loaddgv();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
-
-      
-            NhanVienDTO nv = new NhanVienDTO();
-          
-
-            nv.Tennv = tbTen.Text;
-            nv.Gioitinh = cbGioiTinh.SelectedItem.ToString();
-            nv.Ngaysinh=dtNgay.Value;
-            nv.Diachi = tbDiachi.Text;
-            nv.Sodienthoai = tbSDT.Text;
-            nv.Email = tbEmail.Text;
-            string result = BUS.Themnv(nv);
-            if (result == "Đăng kí thành công")
-            {
-                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvNhanvien.DataSource = BUS.getData();
-                ClearFields();
-                loaddgv();
-                
-            }
-            else
-            {
-                MessageBox.Show("Thêm nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void ClearFields()
         {
@@ -167,15 +171,24 @@ namespace DoAn1_10122390
         private void btTimkiem_Click(object sender, EventArgs e)
         {
             string keyword = tbtimkiem.Text;
-            DataTable searchResult = BUS.TimKiemNhanVien(keyword);
+           
 
-            if (searchResult.Rows.Count == 0)
+            if (string.IsNullOrEmpty(keyword))
             {
-                MessageBox.Show("Không tìm thấy nhân viên nào phù hợp với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                dgvNhanvien.DataSource = searchResult;
+                DataTable searchResult = BUS.TimKiemNhanVien(keyword);
+
+                if (searchResult.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên nào phù hợp với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvNhanvien.DataSource = searchResult;
+                }
             }
         }
 
@@ -194,7 +207,7 @@ namespace DoAn1_10122390
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             ChamCong cc = new ChamCong();
             cc.ShowDialog();
         }
@@ -214,7 +227,11 @@ namespace DoAn1_10122390
             }
         }
 
-      
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            LuongNhanVien l = new LuongNhanVien();
+            l.ShowDialog();
+        }
     }
 }
 

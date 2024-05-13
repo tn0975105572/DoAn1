@@ -90,7 +90,7 @@ namespace DoAn1_10122390
                         MessageBox.Show("Lỗi khi gửi OTP: " + ex.Message);
                     }
 
-
+                    btdoimk.Visible = true;
 
                     lbmk.Visible = true;
                     pbmk.Visible = true;
@@ -130,6 +130,7 @@ namespace DoAn1_10122390
 
                 if (enteredOTP == otp)
                 {
+                    btdoimk.Enabled = true;
                     MessageBox.Show("OTP xác thực thành công!", "Thông Báo");
                 }
                 else
@@ -141,17 +142,25 @@ namespace DoAn1_10122390
             {
                 MessageBox.Show("Lỗi khi xác thực OTP: " + ex.Message);
             }
-            btdoimk.Enabled = true;
+            
         }
 
         private void btdoimk_Click(object sender, EventArgs e)
         {
             try
             {
-                string matKhau = tbmk.Text;
+                string matKhauMoi = tbmk.Text;
+                string xacNhanMatKhau = tbxnmk.Text;
                 string taiKhoan = tbtendangnhap.Text;
-                TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO { Matkhau = matKhau,Taikhoan=taiKhoan };              
-                string ketQua = quenMatKhauBUS.SuaTaiKhoan(taiKhoanDTO);           
+                //string matKhau = tbmk.Text;
+                //string taiKhoan = tbtendangnhap.Text;
+                TaiKhoanDTO taiKhoanDTO = new TaiKhoanDTO { Matkhau = matKhauMoi, Taikhoan=taiKhoan };
+                string ketQua = quenMatKhauBUS.SuaTaiKhoan(taiKhoanDTO);
+                if (string.IsNullOrWhiteSpace(matKhauMoi) || string.IsNullOrWhiteSpace(xacNhanMatKhau))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin mật khẩu mới và xác nhận mật khẩu.", "Thông Báo");
+                    return;
+                }
                 if (ketQua == "Sửa tài khoản thành công")
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông Báo");
@@ -173,7 +182,7 @@ namespace DoAn1_10122390
 
             if (result == DialogResult.OK)
             {
-                Close();
+                Application.Exit();
             }
 
         }

@@ -16,6 +16,7 @@ namespace DoAn1_10122390
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DangNhap());
+            
         }
     }
 }

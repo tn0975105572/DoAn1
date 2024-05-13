@@ -138,7 +138,7 @@
             this.tbxacthuc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbxacthuc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxacthuc.Location = new System.Drawing.Point(201, 26);
-            this.tbxacthuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxacthuc.Margin = new System.Windows.Forms.Padding(4);
             this.tbxacthuc.Name = "tbxacthuc";
             this.tbxacthuc.PasswordChar = '\0';
             this.tbxacthuc.PlaceholderText = "";
@@ -167,7 +167,7 @@
             // tbxnmk
             // 
             this.tbxnmk.Location = new System.Drawing.Point(344, 425);
-            this.tbxnmk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxnmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbxnmk.Multiline = true;
             this.tbxnmk.Name = "tbxnmk";
             this.tbxnmk.Size = new System.Drawing.Size(282, 36);
@@ -179,7 +179,7 @@
             // tbmk
             // 
             this.tbmk.Location = new System.Drawing.Point(344, 368);
-            this.tbmk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbmk.Multiline = true;
             this.tbmk.Name = "tbmk";
             this.tbmk.PasswordChar = '*';
@@ -196,7 +196,7 @@
             this.btdoimk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btdoimk.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btdoimk.Location = new System.Drawing.Point(414, 468);
-            this.btdoimk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btdoimk.Margin = new System.Windows.Forms.Padding(4);
             this.btdoimk.Name = "btdoimk";
             this.btdoimk.Size = new System.Drawing.Size(212, 47);
             this.btdoimk.TabIndex = 51;
@@ -252,7 +252,7 @@
             // tbemailorsdt
             // 
             this.tbemailorsdt.Location = new System.Drawing.Point(317, 130);
-            this.tbemailorsdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbemailorsdt.Margin = new System.Windows.Forms.Padding(4);
             this.tbemailorsdt.Multiline = true;
             this.tbemailorsdt.Name = "tbemailorsdt";
             this.tbemailorsdt.Size = new System.Drawing.Size(282, 46);
@@ -262,7 +262,7 @@
             // tbtendangnhap
             // 
             this.tbtendangnhap.Location = new System.Drawing.Point(317, 71);
-            this.tbtendangnhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbtendangnhap.Margin = new System.Windows.Forms.Padding(4);
             this.tbtendangnhap.Multiline = true;
             this.tbtendangnhap.Name = "tbtendangnhap";
             this.tbtendangnhap.Size = new System.Drawing.Size(282, 42);

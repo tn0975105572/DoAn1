@@ -21,6 +21,8 @@ namespace DAL
             return csdl.getData(sql);
 
         }
+
+     
         public int LayMaNhanVienTiepTheo()
         {
             string sql = "SELECT ISNULL(MAX(MaNhanVien), 0) FROM NhanVien";
@@ -37,9 +39,7 @@ namespace DAL
         }
         public bool Themnv(NhanVienDTO nv) 
         {
-            //string sql = string.Format("Insert into NhanVien values('{0}','{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", nv.Manv, nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email);
-            //csdl.chaycodesql(sql);
-            //return true;
+        
             int maNhanVienMoi = LayMaNhanVienTiepTheo();
             string sql = string.Format("Insert into NhanVien values('{0}','{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", maNhanVienMoi, nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email);
             csdl.chaycodesql(sql);

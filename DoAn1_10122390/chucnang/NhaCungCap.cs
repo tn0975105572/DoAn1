@@ -67,44 +67,48 @@ namespace DoAn1_10122390
 
         private void btthem_Click(object sender, EventArgs e)
         {
-            int count = dgvnhacungcap.Rows.Count;
-
-            if (count > 0)
+            // Kiểm tra các trường thông tin có rỗng không
+            if (string.IsNullOrEmpty(tbTennhacungcap.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text))
             {
-
-                int lastEmployeeID = Convert.ToInt32(dgvnhacungcap.Rows[count - 1].Cells[0].Value);
-                int nextEmployeeID = lastEmployeeID + 1;
-                string newEmployeeID = nextEmployeeID.ToString();
-                tbManhacungcap.Text = newEmployeeID;
-
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                tbManhacungcap.Text = "1";
-            }
-            NhaCungCapDTO ncc = new NhaCungCapDTO();
-            ncc.ManhaCC = tbManhacungcap.Text;
-            ncc.Tennhacc = tbTennhacungcap.Text;
-            ncc.Diachi = tbDiachi.Text;
-            ncc.SDT = tbSDT.Text;
+                int count = dgvnhacungcap.Rows.Count;
 
-            string result = BUS.Themnhacc(ncc);
-            //if (result == "Mã nhà cung cấp đã được đăng kí.")
-            //{
-            //    MessageBox.Show("Mã nhà cung cấp đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            if (result == "Thêm nhà cung cấp thành công.")
-            {
-                MessageBox.Show("Thêm nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (count > 0)
+                {
+                    int lastSupplierID = Convert.ToInt32(dgvnhacungcap.Rows[count - 1].Cells[0].Value);
+                    int nextSupplierID = lastSupplierID + 1;
+                    tbManhacungcap.Text = nextSupplierID.ToString();
+                }
+                else
+                {
+                    tbManhacungcap.Text = "1";
+                }
 
-                dgvnhacungcap.DataSource = BUS.getData();
-                ClearFields();
-                loaddgv();
+                NhaCungCapDTO ncc = new NhaCungCapDTO();
+
+                ncc.ManhaCC = tbManhacungcap.Text;
+                ncc.Tennhacc = tbTennhacungcap.Text;
+                ncc.Diachi = tbDiachi.Text;
+                ncc.SDT = tbSDT.Text;
+
+                string result = BUS.Themnhacc(ncc);
+                if (result == "Thêm nhà cung cấp thành công.")
+                {
+                    MessageBox.Show("Thêm nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvnhacungcap.DataSource = BUS.getData();
+                    ClearFields();
+                    loaddgv();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm nhà cung cấp thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Thêm nhà cung cấp thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
         private void ClearFields()
         {

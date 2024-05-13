@@ -69,44 +69,49 @@ namespace DoAn1_10122390
 
         private void btthem_Click(object sender, EventArgs e)
         {
-            int count = dgvkhachhang.Rows.Count;
-
-            if (count > 0)
+           
+            if (string.IsNullOrEmpty(tbTen.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
             {
-
-                int lastEmployeeID = Convert.ToInt32(dgvkhachhang.Rows[count - 1].Cells[0].Value);
-                int nextEmployeeID = lastEmployeeID + 1;
-                string newEmployeeID = nextEmployeeID.ToString();
-                tbMa.Text = newEmployeeID;
-
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                tbMa.Text = "1";
-            }
-            KhachHangDTO kh = new KhachHangDTO();
-            kh.MaKH = tbMa.Text;
-            kh.TenKH = tbTen.Text;
-            kh.DiaChi = tbDiachi.Text;
-            kh.SDT = tbSDT.Text;
-            kh.Email=tbEmail.Text;
-            string result = BUS.Themhk(kh);
-            //if (result == "Mã khách hàng đã được đăng kí.")
-            //{
-            //    MessageBox.Show("Mã Khách hàng đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            if (result == "Thêm thành công.")
-            {
-                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int count = dgvkhachhang.Rows.Count;
 
-                dgvkhachhang.DataSource = BUS.getData();
-                ClearFields();
-                loaddgv();
+                if (count > 0)
+                {
+                    int lastCustomerID = Convert.ToInt32(dgvkhachhang.Rows[count - 1].Cells[0].Value);
+                    int nextCustomerID = lastCustomerID + 1;
+                    tbMa.Text = nextCustomerID.ToString();
+                }
+                else
+                {
+                    tbMa.Text = "1";
+                }
+
+                KhachHangDTO kh = new KhachHangDTO();
+
+                kh.MaKH = tbMa.Text;
+                kh.TenKH = tbTen.Text;
+                kh.DiaChi = tbDiachi.Text;
+                kh.SDT = tbSDT.Text;
+                kh.Email = tbEmail.Text;
+
+                string result = BUS.Themhk(kh);
+                if (result == "Thêm thành công.")
+                {
+                    MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvkhachhang.DataSource = BUS.getData();
+                    ClearFields();
+                    loaddgv();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm khách hàng thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Thêm khách hàng thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
         private void ClearFields()
         {

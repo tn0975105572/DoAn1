@@ -84,6 +84,19 @@ namespace DoAn1_10122390
 
         private void btthem_Click(object sender, EventArgs e)
         {
+            int count = dgvchamcong.Rows.Count;
+
+            if (count > 0)
+            {
+                int lastEmployeeID = Convert.ToInt32(dgvchamcong.Rows[count - 1].Cells[0].Value);
+                int nextEmployeeID = lastEmployeeID + 1;
+                tbmacc.Text = nextEmployeeID.ToString();
+            }
+            else
+            {
+                tbmacc.Text = "1";
+            }
+
             ChamCongDTO cc = new ChamCongDTO();
             cc.Mavn = cbbnhanvien.SelectedValue.ToString();
             cc.Ngaycc = dtpngay.Value;
@@ -172,7 +185,7 @@ namespace DoAn1_10122390
                             workbook.Worksheets.Add(dataTable, "NhanVien");
                             workbook.SaveAs(sfd.FileName);
                         }
-                        MessageBox.Show("Lưu thành công!");
+                        MessageBox.Show("Lưu thành công!",ShowIcon.ToString());
                     }
                     catch (Exception ex)
                     {

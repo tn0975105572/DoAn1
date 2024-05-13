@@ -29,15 +29,24 @@ namespace DAL
             string sql = "SELECT MaNhanVien FROM NhanVien"; 
             return csdl.getData(sql);
         }
-
-        public int kiemtramatrung(string ma, DateTime ngayChamCong)
+        public DataTable getData2()
         {
-            string sql = $"SELECT COUNT(*) FROM ChiTietChamCong WHERE MaNhanVien = '{ma}' AND NgayChamCong = '{ngayChamCong.ToString("yyyy-MM-dd")}'";
-            return csdl.KiemTraMaTrung(ma, sql);
+
+            string sql = "SELECT MaKhachHang FROM KhachHang";
+            return csdl.getData(sql);
         }
+        public int LayMaCCTiepTheo()
+        {
+            string sql = "SELECT ISNULL(MAX(Macc), 0) FROM ChiTietChamCong";
+            int maBangLuonght = csdl.LayGiaTri(sql);
+            int mamoi = maBangLuonght + 1;
+            return mamoi;
+        }
+
         public bool ThemCC(ChamCongDTO cc)
         {
-            string sql = string.Format("Insert into ChiTietChamCong values('{0}','{1}', '{2}')", cc.Macc, cc.Mavn,  cc.Ngaycc.ToString("yyyy-MM-dd"));
+            int mamoi = LayMaCCTiepTheo();
+            string sql = string.Format("Insert into ChiTietChamCong values('{0}','{1}', '{2}')", mamoi, cc.Mavn,  cc.Ngaycc.ToString("yyyy-MM-dd"));
             csdl.chaycodesql(sql);
             return true;
 

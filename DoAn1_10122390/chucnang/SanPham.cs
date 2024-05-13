@@ -179,5 +179,10 @@ namespace DoAn1_10122390
         {
 
         }
+
+        private void tbMacc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

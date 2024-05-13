@@ -126,7 +126,9 @@
     <Compile Include="DangKyDAL.cs" />
     <Compile Include="DangNhapDAL.cs" />
     <Compile Include="CSDL_DAL.cs" />
+    <Compile Include="DonHangDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
+    <Compile Include="LuongDAL.cs" />
     <Compile Include="NhaCungCapDAL.cs" />
     <Compile Include="NhanvienDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

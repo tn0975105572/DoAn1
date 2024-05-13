@@ -39,17 +39,20 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(902, 691);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1137, 691);
             this.crystalReportViewer1.TabIndex = 0;
+
             // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 691);
+            this.ClientSize = new System.Drawing.Size(1137, 691);
             this.Controls.Add(this.crystalReportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoaDon";
             this.Text = "HoaDon";
+      
             this.ResumeLayout(false);
 
         }

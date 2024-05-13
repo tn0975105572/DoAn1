@@ -24,25 +24,19 @@ namespace BUS
             return cc.getData1();
         }
 
-
-        public int kiemtramatrung(string ma, DateTime ngayChamCong)
+        public DataTable getData2()
         {
-            
-            return cc.kiemtramatrung(ma, ngayChamCong);
+            return cc.getData2();
         }
+
         public string Themcc(ChamCongDTO dto)
         {
-            int count = cc.kiemtramatrung(dto.Mavn, dto.Ngaycc);
-
-            if (count > 0)
-            {
-                return "Mã nhân viên và ngày chấm công đã tồn tại!";
-            }
-            else
-            {
+          
+           
+            
                 cc.ThemCC(dto);
                 return "Thêm chấm công thành công!";
-            }
+           
 
         }
         public string Xoacc(ChamCongDTO dto)

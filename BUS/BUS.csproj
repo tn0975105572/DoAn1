@@ -119,7 +119,9 @@
     <Compile Include="ChamCongBUS.cs" />
     <Compile Include="DangKyBUS.cs" />
     <Compile Include="DangNhapBUS.cs" />
+    <Compile Include="DonHangBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="LuongBUS.cs" />
     <Compile Include="NhaCungCapBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

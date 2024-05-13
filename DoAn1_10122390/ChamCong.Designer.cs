@@ -184,6 +184,7 @@
             this.tbmacc.Name = "tbmacc";
             this.tbmacc.PasswordChar = '\0';
             this.tbmacc.PlaceholderText = "";
+            this.tbmacc.ReadOnly = true;
             this.tbmacc.SelectedText = "";
             this.tbmacc.Size = new System.Drawing.Size(117, 36);
             this.tbmacc.TabIndex = 8;
@@ -276,9 +277,9 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.guna2Button2.Image = global::DoAn1_10122390.Properties.Resources.excel;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(608, 12);
+            this.guna2Button2.Location = new System.Drawing.Point(747, -2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(58, 52);
+            this.guna2Button2.Size = new System.Drawing.Size(59, 50);
             this.guna2Button2.TabIndex = 39;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -315,7 +316,7 @@
             this.ptb2.AccessibleDescription = "";
             this.ptb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptb2.Image = global::DoAn1_10122390.Properties.Resources._9;
-            this.ptb2.Location = new System.Drawing.Point(812, 10);
+            this.ptb2.Location = new System.Drawing.Point(812, 4);
             this.ptb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb2.Name = "ptb2";
             this.ptb2.Size = new System.Drawing.Size(40, 38);

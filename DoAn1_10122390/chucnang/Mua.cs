@@ -86,7 +86,7 @@ namespace DoAn1_10122390
             {
 
 
-                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells[1].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells[2].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells["Column9"].Value.ToString());
+                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells["Column1"].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells["Column9"].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells["Column2"].Value.ToString());
             }
             
         }
@@ -160,6 +160,12 @@ namespace DoAn1_10122390
                 string maDonHangMoi = BUS2.LayMaDonHangMoi();
                 MessageBox.Show("Đã thêm đơn hàng thành công. Mã đơn hàng mới là: " + maDonHangMoi, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbhoadon.Text = maDonHangMoi;
+
+
+
+
+
+
                 dgvGioHang.Columns["Column8"].Visible = true;
                 dgvSanpham.Columns["Column4"].Visible = true;
                 p.Visible = true;
@@ -185,13 +191,37 @@ namespace DoAn1_10122390
         {
 
         }
-
+       
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             int tongTien = TinhTongTien();
             tbTong.Text = tongTien.ToString("N0");
-           
+
+
+
+
+            DonHangDTO dh = new DonHangDTO();
+            dh.MaChiTietHoaDon = tbmachitiethoadon.Text;
+            int rowIndex = dgvGioHang.CurrentCell.RowIndex;
+            dh.MaGiamGia = tbmagg.Text;
+            dh.MaDonHang = tbhoadon.Text;
+            dh.MaSanPham = dgvGioHang.Rows[rowIndex].Cells["Column10"].Value.ToString();
+            dh.SoLuong= dgvGioHang.Rows[rowIndex].Cells["Column7"].Value.ToString();
+            dh.MaNhanVien = cbbnhanvien.Text;
+            dh.Gia = tbTong.Text;
+            string result = BUS2.ThemChiTiet(dh);
+            if (result == "2")
+            {
+
+                MessageBox.Show("Sửa thông tin khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                loaddgv();
+            }
+
+
         }
+
+       
     }
 }
-                                                                                                                                                     
+                                                                                                                                                        

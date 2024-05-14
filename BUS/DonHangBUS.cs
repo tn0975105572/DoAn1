@@ -20,16 +20,18 @@ namespace BUS
             dh.ThemDonHang(dto);
             return "1";
         }
-        public string ThemChiTietDonHang(DonHangDTO dto)
-        {
-            dh.ThemChiTietDonHang(dto);
-            return "1";
-        }
 
+        public string ThemChiTiet(DonHangDTO dto)
+        {
+            dh.ThemChiTiet(dto);
+            return "2";
+        }
+        
         public DataTable GetData()
         {
             return dh.getData();
         }
+       
         public string LayMaDonHangMoi()
         {
             DataTable dt = GetData();
@@ -39,5 +41,6 @@ namespace BUS
             }
             return "1";
         }
+       
     }
 }

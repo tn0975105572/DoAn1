@@ -5,7 +5,7 @@ namespace DAL
 {
     public class CSDL_DAL
     {
-        public string diachi = @"Data Source=DUYTUAN;Initial Catalog=Doan1;Integrated Security=True;";
+        public string diachi = @"Data Source=DUYTUAN;Initial Catalog=olodo;Integrated Security=True;";
 
         public SqlConnection kn;
         public SqlCommand cm;

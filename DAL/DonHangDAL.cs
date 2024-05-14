@@ -38,15 +38,16 @@ namespace DAL
             return true;
 
         }
-        
-        public bool ThemChiTietDonHang(DonHangDTO DH)
-        {
-           
 
-            string sql = string.Format("Insert into ChiTietDonHang values('{0}','{1}', '{2}', '{3}','{4}','{5}')", DH.MaChiTietHoaDon, DH.MaSanPham, DH.SoLuong, DH.Gia,DH.MaNhanVien,DH.MaChiTietHoaDon);
+        public bool ThemChiTiet(DonHangDTO DH)
+        {
+            string sql = string.Format("insert into ChiTietDonHang values('{0}','{1}','{2}','{3}','{4}','{5}',{6})",
+              DH.MaSanPham, DH.MaSanPham, DH.SoLuong, DH.Gia, DH.MaNhanVien, DH.MaGiamGia, DH.MaChiTietHoaDon);
             csdl.chaycodesql(sql);
             return true;
 
         }
+
+
     }
 }

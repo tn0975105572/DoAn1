@@ -32,7 +32,7 @@ namespace DAL
         public DataTable getData2()
         {
 
-            string sql = "SELECT MaKhachHang FROM KhachHang";
+            string sql = "SELECT MaGiamGia FROM MaGiamGia";
             return csdl.getData(sql);
         }
         public int LayMaCCTiepTheo()

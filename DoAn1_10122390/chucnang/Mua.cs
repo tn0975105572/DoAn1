@@ -1,16 +1,8 @@
 ﻿using BUS;
-using DoAn1_10122390.chucnang;
 using DTO;
-using Irony.Parsing;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -21,6 +13,7 @@ namespace DoAn1_10122390
         public MUA()
         {
             InitializeComponent();
+            this.Load += new System.EventHandler(this.MUA_Load);
         }
         SanPhamBUS BUS = new SanPhamBUS();
         ChamCongBUS BUS1 = new ChamCongBUS();
@@ -28,44 +21,31 @@ namespace DoAn1_10122390
         DonHangDTO dh = new DonHangDTO();
         void loaddgv()
         {
-           
-
             dgvSanpham.DataSource = BUS.Lay();
             dgvSanpham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
             foreach (DataGridViewColumn column in dgvSanpham.Columns)
             {
                 column.DefaultCellStyle.Font = new Font("Arial", 14);
             }
-
-
-
             dgvGioHang.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgvGioHang.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             foreach (DataGridViewColumn column in dgvGioHang.Columns)
             {
                 column.DefaultCellStyle.Font = new Font("Arial", 10);
             }
-
-
         }
-        private void LoadDataIntoComboBox()
+
+        public void LoadDataIntoComboBox()
         {
-
             DataTable dataTable = BUS1.getData1();
+            cbbmanhanvien.DataSource = dataTable;
+            cbbmanhanvien.DisplayMember = "MaNhanVien";
+            cbbmanhanvien.ValueMember = "MaNhanVien";
 
-
-            cbbnhanvien.DataSource = dataTable;
-            cbbnhanvien.DisplayMember = "MaNhanVien";
-            cbbnhanvien.ValueMember = "MaNhanVien";
-            DataTable dataTable1 = BUS1.getData2();
-
-
-
-
-
-            cbbkhachhang.DataSource = dataTable1;
-            cbbkhachhang.DisplayMember = "MaKhachHang";
-            cbbkhachhang.ValueMember = "MaKhachHang";
+            DataTable dataTable2 = BUS1.getData2();
+            cbbmagiamgia.DataSource = dataTable2;
+            cbbmagiamgia.DisplayMember = "MaGiamGia";
+            cbbmagiamgia.ValueMember = "MaGiamGia";
         }
 
         public void MUA_Load(object sender, EventArgs e)
@@ -76,21 +56,28 @@ namespace DoAn1_10122390
             }
 
             LoadDataIntoComboBox();
-
-
+            dgvGioHang.CellValueChanged += dgvGioHang_CellValueChanged;
         }
 
         public void dgvSanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvSanpham.Columns[e.ColumnIndex].Name == "Column4")
+            if (dgvSanpham.Columns[e.ColumnIndex].Name == "Column5")
             {
+                them.Enabled = true;
 
-
-                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells["Column1"].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells["Column9"].Value.ToString(), dgvSanpham.Rows[e.RowIndex].Cells["Column2"].Value.ToString());
+                dgvSanpham.Columns["Column5"].Visible = false;
+                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells["Column1"].Value.ToString(),
+                    dgvSanpham.Rows[e.RowIndex].Cells["Column2"].Value.ToString(),
+                    dgvSanpham.Rows[e.RowIndex].Cells["Column3"].Value.ToString(), 0);
             }
-            
-        }
 
+            if (e.RowIndex >= 0 && e.RowIndex < dgvSanpham.Rows.Count)
+            {
+                DataGridViewRow hang = dgvSanpham.Rows[e.RowIndex];
+                tbsLtrongkho.Text = hang.Cells["Column4"].Value.ToString();
+                tbmasp.Text = hang.Cells["Column2"].Value.ToString();
+            }
+        }
 
 
         public void guna2Button1_Click(object sender, EventArgs e)
@@ -101,19 +88,25 @@ namespace DoAn1_10122390
 
         public void guna2Button6_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable(); 
+            DataTable dt = new DataTable();
             HoaDon hd = new HoaDon();
-            
+
             hd.ShowDialog();
         }
-
+        private int i;
         public void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvGioHang.Columns[e.ColumnIndex].Name == "Column8")
+            if (dgvGioHang.Columns[e.ColumnIndex].Name == "Column10")
             {
                 dgvGioHang.Rows.RemoveAt(e.RowIndex);
+                dgvSanpham.Columns["Column5"].Visible = true;
+                them.Enabled = false;
+                tbsLtrongkho.Text = string.Empty;
+                tbmasp.Text = string.Empty;
+                soluongmua = Convert.ToInt32(dgvSanpham[3, i].Value.ToString());
             }
-          
+            
+
         }
         public int TinhTongTien()
         {
@@ -123,63 +116,64 @@ namespace DoAn1_10122390
             {
                 if (!row.IsNewRow)
                 {
-                    int giaTriSanPham = Convert.ToInt32(row.Cells["Column6"].Value); 
-                    int soLuong = Convert.ToInt32(row.Cells["Column7"].Value); 
+                    int giaTriSanPham = Convert.ToInt32(row.Cells["Column8"].Value);
+                    int soLuong = Convert.ToInt32(row.Cells["Column9"].Value);
 
-                    tongTien += giaTriSanPham * soLuong;
+                    if (soLuong > 0)
+                    {
+                        tongTien += giaTriSanPham * soLuong;
+                    }
                 }
             }
 
+            tbTong.Text = tongTien.ToString();
             return tongTien;
         }
+
+
 
         public void tbSoluong_ValueChanged(object sender, EventArgs e)
         {
             int giaTriMoi = (int)NUDSoluong.Value;
 
-            int soLuongHienTai = dgvGioHang.CurrentRow.Cells["Column7"].Value == null ? 0 : Convert.ToInt32(dgvGioHang.CurrentRow.Cells["Column7"].Value);
+            int soLuongHienTai = dgvGioHang.CurrentRow.Cells["Column9"].Value == null
+                ? 0
+                : Convert.ToInt32(dgvGioHang.CurrentRow.Cells["Column9"].Value);
             if (giaTriMoi > soLuongHienTai)
             {
-                dgvGioHang.CurrentRow.Cells["Column7"].Value = soLuongHienTai + 1;
+                dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai + 1;
             }
             else if (giaTriMoi < soLuongHienTai)
             {
-                dgvGioHang.CurrentRow.Cells["Column7"].Value = soLuongHienTai - 1;
+                dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai - 1;
             }
         }
 
-     
 
-   
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+
+
+        public void guna2Button4_Click(object sender, EventArgs e)
         {
             string result = BUS2.ThemDonHang(dh);
             if (result == "1")
             {
                 string maDonHangMoi = BUS2.LayMaDonHangMoi();
-                MessageBox.Show("Đã thêm đơn hàng thành công. Mã đơn hàng mới là: " + maDonHangMoi, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã thêm đơn hàng thành công. Mã đơn hàng mới là: " + maDonHangMoi, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbhoadon.Text = maDonHangMoi;
-
-
-
-
-
-
-                dgvGioHang.Columns["Column8"].Visible = true;
-                dgvSanpham.Columns["Column4"].Visible = true;
+                dgvGioHang.Columns["Column10"].Visible = true;
+                dgvSanpham.Columns["Column5"].Visible = true;
                 p.Visible = true;
                 them.Visible = true;
-
-                tbmachitiethoadon.Enabled = true;
+                cbbmagiamgia.Enabled = true;
                 tbhoadon.Enabled = true;
-                dtpkngaydat.Enabled = true;
-                cbbnhanvien.Enabled = true;
-                cbbkhachhang.Enabled = true;
+                cbbmanhanvien.Enabled = true;
+
                 btIn.Enabled = true;
                 btThanhToan.Enabled = true;
-                them.Enabled = true;
-                bttaomoi.Enabled= false;
+
+                bttaomoi.Enabled = false;
             }
             else
             {
@@ -187,41 +181,74 @@ namespace DoAn1_10122390
             }
         }
 
-        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        private int soluongmua;
+
+        public void guna2Button2_Click(object sender, EventArgs e)
         {
-
-        }
-       
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            int tongTien = TinhTongTien();
-            tbTong.Text = tongTien.ToString("N0");
-
-
-
-
+            them.Enabled = false;
             DonHangDTO dh = new DonHangDTO();
-            dh.MaChiTietHoaDon = tbmachitiethoadon.Text;
-            int rowIndex = dgvGioHang.CurrentCell.RowIndex;
-            dh.MaGiamGia = tbmagg.Text;
+            dgvSanpham.Columns["Column5"].Visible = true;
+            dh.MaGiamGia = cbbmagiamgia.Text;
             dh.MaDonHang = tbhoadon.Text;
-            dh.MaSanPham = dgvGioHang.Rows[rowIndex].Cells["Column10"].Value.ToString();
-            dh.SoLuong= dgvGioHang.Rows[rowIndex].Cells["Column7"].Value.ToString();
-            dh.MaNhanVien = cbbnhanvien.Text;
+            int rowIndex = dgvGioHang.CurrentCell.RowIndex;
+            dh.MaSanPham = dgvGioHang.Rows[rowIndex].Cells["Column7"].Value.ToString();
+            dh.SoLuong = dgvGioHang.Rows[rowIndex].Cells["Column9"].Value.ToString();
+            dh.MaNhanVien = cbbmanhanvien.Text;
             dh.Gia = tbTong.Text;
+
+            SanPhamDTO sp = new SanPhamDTO();
+            int sltrongkho;
+            int soluongmua;
+            int.TryParse(tbsLtrongkho.Text, out sltrongkho);
+            int.TryParse(dh.SoLuong, out soluongmua);
+
+            if (soluongmua > sltrongkho) 
+            {
+                DialogResult dialogResult = MessageBox.Show("Số lượng mua vượt quá số lượng trong kho!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    dgvGioHang.Rows.Clear();
+                }
+
+                return;
+            }
+
             string result = BUS2.ThemChiTiet(dh);
             if (result == "2")
             {
-
-                MessageBox.Show("Sửa thông tin khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                loaddgv();
+                MessageBox.Show("Thông tin sản phẩm vào Giỏ Hàng Thành Công!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                dgvGioHang.Rows.Clear();
             }
 
-
+            int slmoi = sltrongkho - soluongmua;
+            sp.SoLuong = slmoi.ToString();
+            sp.Masp = tbmasp.Text;
+            string result1 = BUS2.Suasoluong(sp);
+            if (result1 == "1")
+            {
+                MessageBox.Show($"Số Lượng Sản Phẩm Trong Kho Hiện Tại LÀ: {slmoi}");
+                loaddgv();
+                tbsLtrongkho.Text = string.Empty;
+                tbmasp.Text = string.Empty;
+            }
         }
 
+
+        public void dgvGioHang_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvGioHang.Columns["Column9"].Index)
+            {
+                TinhTongTien();
+                soluongmua = Convert.ToInt32(dgvGioHang.Rows[e.RowIndex].Cells["Column9"].Value);
+            }
+        }
+
+   
        
     }
+
 }
                                                                                                                                                         

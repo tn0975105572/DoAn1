@@ -31,11 +31,7 @@ namespace DoAn1_10122390
 
             dgvSanpham.DataSource = BUS.getData();
             dgvSanpham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
-            //dgvSanpham.Columns[0].HeaderText = "Mã Sản Phẩm ";
-            //dgvSanpham.Columns[1].HeaderText = "Số lượng";
-            //dgvSanpham.Columns[0].DefaultCellStyle.Font = new Font("Arial", 10);
-
-            //dgvSanpham.Columns[1].DefaultCellStyle.Font = new Font("Arial", 10);
+           
 
         }
 

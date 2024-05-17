@@ -23,6 +23,15 @@ namespace DAL
             int maDonHang = ma + 1;
             return maDonHang;
         }
+        public int LayMaChiTietTiepTheo()
+        {
+            string sql = "SELECT MAX(MaChiTietHoaDon) AS MaxMaChiTietHoaDon FROM [ChiTietDonHang];";
+            int ma = csdl.LayGiaTri(sql);
+            int maDonHang = ma + 1;
+            return maDonHang;
+        }
+
+
         public DataTable getData()
         {
             string sql = "SELECT MAX(MaDonHang) AS MaxMaDonHang FROM DonHang";
@@ -30,6 +39,9 @@ namespace DAL
 
 
         }
+       
+
+
         public bool ThemDonHang(DonHangDTO DH)
         {
             int maDonHang = LayMaDonHangTiepTheo();
@@ -41,13 +53,20 @@ namespace DAL
 
         public bool ThemChiTiet(DonHangDTO DH)
         {
-            string sql = string.Format("insert into ChiTietDonHang values('{0}','{1}','{2}','{3}','{4}','{5}',{6})",
-              DH.MaSanPham, DH.MaSanPham, DH.SoLuong, DH.Gia, DH.MaNhanVien, DH.MaGiamGia, DH.MaChiTietHoaDon);
+            int maDonHang = LayMaChiTietTiepTheo();
+            string sql = string.Format("insert into ChiTietDonHang values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+              DH.MaDonHang, DH.MaSanPham, DH.SoLuong, DH.Gia, DH.MaNhanVien, DH.MaGiamGia, maDonHang);
             csdl.chaycodesql(sql);
             return true;
 
         }
 
+        public bool Suasoluong(SanPhamDTO sp)
+        {
+            string sql = string.Format("Update SanPham Set  SoLuong = '{0}' Where MaSanPham = '{1}'",  sp.SoLuong, sp.Masp);
+            csdl.chaycodesql(sql);
+            return true;
 
+        }
     }
 }

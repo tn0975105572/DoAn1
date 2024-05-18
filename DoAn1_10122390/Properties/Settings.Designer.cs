@@ -33,5 +33,16 @@ namespace DoAn1_10122390.Properties {
                 return ((string)(this["Doan1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DUYTUAN;Initial Catalog=olodo;Integrated Security=True;TrustServerCer" +
+            "tificate=True")]
+        public string olodoConnectionString {
+            get {
+                return ((string)(this["olodoConnectionString"]));
+            }
+        }
     }
 }

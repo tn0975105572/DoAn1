@@ -20,7 +20,11 @@ namespace BUS
             dh.ThemDonHang(dto);
             return "1";
         }
-   
+        public DataTable Hien(DonHangDTO dto)
+        {
+            return dh.Hien(dto);
+        }
+
 
 
         public string ThemChiTiet(DonHangDTO dto)

@@ -154,12 +154,6 @@
     <Compile Include="chucnang\ThongTinCaNhan.Designer.cs">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,13 +166,11 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="gioithieudanhgia.cs">
       <SubType>Form</SubType>
@@ -191,12 +183,6 @@
     </Compile>
     <Compile Include="chucnang\KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HoaDon.Designer.cs">
-      <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadDangNhap.cs">
       <SubType>Form</SubType>
@@ -240,6 +226,11 @@
     <Compile Include="NhapKho.Designer.cs">
       <DependentUpon>NhapKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="olodoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>olodoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -271,21 +262,17 @@
     <EmbeddedResource Include="chucnang\ThongTinCaNhan.resx">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gioithieudanhgia.resx">
       <DependentUpon>gioithieudanhgia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon.resx">
-      <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadDangNhap.resx">
       <DependentUpon>LoadDangNhap.cs</DependentUpon>
@@ -317,16 +304,16 @@
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="olodoDataSet.xsc">
+      <DependentUpon>olodoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="olodoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>olodoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="olodoDataSet.xss">
+      <DependentUpon>olodoDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -557,5 +544,6 @@
   <ItemGroup>
     <None Include="Resources\tiền.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

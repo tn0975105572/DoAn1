@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
+using ClosedXML.Excel;
 
 namespace DoAn1_10122390
 {
@@ -88,10 +88,31 @@ namespace DoAn1_10122390
 
         public void guna2Button6_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            HoaDon hd = new HoaDon();
 
-            hd.ShowDialog();
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (XLWorkbook workbook = new XLWorkbook())
+                        {
+                            DonHangDTO dh = new DonHangDTO();
+                            dh.MaChiTietHoaDon = tbhoadon.Text; 
+
+                            DataTable dataTable = BUS2.Hien(dh); 
+                            string sheetName = tbhoadon.Text; 
+                            workbook.Worksheets.Add(dataTable, sheetName);
+                            workbook.SaveAs(sfd.FileName);
+                        }
+                        MessageBox.Show("Lưu thành công!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error occurred: " + ex.Message);
+                    }
+                }
+            }
         }
         private int i;
         public void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -246,8 +267,12 @@ namespace DoAn1_10122390
             }
         }
 
-   
-       
+        private void btThanhToan_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+
+        }
     }
 
 }

@@ -209,7 +209,7 @@ namespace DoAn1_10122390
         {
             
             ChamCong cc = new ChamCong();
-            cc.ShowDialog();
+            cc.Show();
         }
 
         private void dgvNhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -230,7 +230,7 @@ namespace DoAn1_10122390
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             LuongNhanVien l = new LuongNhanVien();
-            l.ShowDialog();
+            l.Show();
         }
     }
 }

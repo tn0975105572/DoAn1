@@ -36,10 +36,14 @@ namespace DAL
         {
             string sql = "SELECT MAX(MaDonHang) AS MaxMaDonHang FROM DonHang";
             return csdl.getData(sql);
+        }
 
+        public DataTable Hien(DonHangDTO dh)
+        {
+            string sql = "SELECT * FROM ChiTietDonHang WHERE MaDonHang = (SELECT MAX(MaDonHang) FROM ChiTietDonHang)";
+            return csdl.getData(sql);
 
         }
-       
 
 
         public bool ThemDonHang(DonHangDTO DH)

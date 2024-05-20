@@ -24,7 +24,7 @@ namespace DoAn1_10122390
 
 
         private TaiKhoanDTO olodo1 = new TaiKhoanDTO();
-       
+        
         public DangNhap()
         {
             InitializeComponent();
@@ -54,6 +54,7 @@ namespace DoAn1_10122390
             string taiKhoan = tbtendangnhap.Text;
             string matKhau = tbmk.Text;
             
+            
 
             try
             {
@@ -65,6 +66,8 @@ namespace DoAn1_10122390
                 {
                     olodo1.Taikhoan = tbtendangnhap.Text;
                     this.Hide();
+                    Quyen.tk = tbtendangnhap.Text;
+                    Quyen.mk = tbmk.Text;
                     LoadDangNhap menu = new LoadDangNhap(olodo1);
                     menu.ShowDialog();
                     this.Hide();

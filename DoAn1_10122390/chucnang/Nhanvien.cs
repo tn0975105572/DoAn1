@@ -1,18 +1,17 @@
 ﻿using BUS;
 using DoAn1_10122390.chucnang;
 using DTO;
+using Irony.Parsing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
 
 namespace DoAn1_10122390
 {
@@ -66,6 +65,20 @@ namespace DoAn1_10122390
             loaddgv();
 
             tbMa.ReadOnly = true;
+            if ((Quyen.tk == "admin"&&Quyen.mk=="admin" ) || (Quyen.tk == "123" && Quyen.mk == "123"))
+            {
+                MessageBox.Show("Chào mừng Quản Lý", "Chào Mừng",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                btSua.Enabled = false;
+                bttThem.Enabled= false;
+                btXoa.Enabled= false;
+                guna2Button1.Enabled= false;
+                guna2Button2.Enabled=false;
+                MessageBox.Show("Bạn đang nhập tài khoản không phải tài khoản quản lý","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
 

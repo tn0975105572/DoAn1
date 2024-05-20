@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.WebRequestMethods;
 using System.Text.RegularExpressions;
+using Guna.UI2.WinForms;
 
 
 namespace DoAn1_10122390.chucnang
@@ -44,7 +45,19 @@ namespace DoAn1_10122390.chucnang
         private void ThongTinCaNhan_Load(object sender, EventArgs e)
         {
             tbtaikhoan.Text = olodo4.Taikhoan;
-            
+            if ((Quyen.tk == "admin" && Quyen.mk == "admin") || (Quyen.tk == "123" && Quyen.mk == "123"))
+            {
+                MessageBox.Show("Chào mừng Quản Lý", "Chào Mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                tbdoi.Enabled = false;
+                MessageBox.Show("Bạn đang nhập tài khoản không phải tài khoản quản lý", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
 
         private void tbdoi_Click(object sender, EventArgs e)

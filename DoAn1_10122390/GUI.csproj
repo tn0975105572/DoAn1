@@ -266,6 +266,7 @@
     <Compile Include="chucnang\ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quyen.cs" />
     <EmbeddedResource Include="ChamCong.resx">
       <DependentUpon>ChamCong.cs</DependentUpon>
     </EmbeddedResource>

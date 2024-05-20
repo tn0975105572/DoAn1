@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DoAn1_10122390.chucnang;
 using DTO;
+using Guna.UI2.WinForms;
 using Irony.Parsing;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,18 @@ namespace DoAn1_10122390
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             loaddgv();
+            if ((Quyen.tk == "admin" && Quyen.mk == "admin") || (Quyen.tk == "123" && Quyen.mk == "123"))
+            {
+                MessageBox.Show("Chào mừng Quản Lý", "Chào Mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                btsua.Enabled = false;
+                btthem.Enabled = false;
+                btxoa.Enabled = false;
+                MessageBox.Show("Bạn đang nhập tài khoản không phải tài khoản quản lý", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvnhacungcap_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -55,6 +55,12 @@ namespace DAL
 
         }
 
+        public bool ThemNgayDonHang(DonHangDTO DH)
+        {
+            string sql = string.Format("UPDATE DonHang SET NgayDat = '{0}' WHERE MaDonHang = {1}", DH.NgayDat.ToString("yyyy-MM-dd"), DH.MaDonHang);
+            csdl.chaycodesql(sql);
+            return true;
+        }
         public bool ThemChiTiet(DonHangDTO DH)
         {
             int maDonHang = LayMaChiTietTiepTheo();
@@ -64,7 +70,6 @@ namespace DAL
             return true;
 
         }
-
         public bool Suasoluong(SanPhamDTO sp)
         {
             string sql = string.Format("Update SanPham Set  SoLuong = '{0}' Where MaSanPham = '{1}'",  sp.SoLuong, sp.Masp);
@@ -72,5 +77,6 @@ namespace DAL
             return true;
 
         }
+
     }
 }

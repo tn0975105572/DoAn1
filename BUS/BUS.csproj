@@ -128,6 +128,7 @@
     <Compile Include="QuenMatKhauBUS.cs" />
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="SuaBUS.cs" />
+    <Compile Include="ThongKeBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

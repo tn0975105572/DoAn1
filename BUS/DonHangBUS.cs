@@ -54,6 +54,12 @@ namespace BUS
             }
             return "1";
         }
+
+        public string ThemNgayDat(DonHangDTO dto)
+        {
+            dh.ThemNgayDonHang(dto);
+            return "1";
+        }
        
 
 

@@ -10,6 +10,15 @@ namespace DoAn1_10122390
 {
     public partial class MUA : UserControl
     {
+
+        /*  _____     __  __     __  __     ______   __  __     ______     __   __    */
+        /* /\  __-.  /\ \/\ \   /\ \_\ \   /\__  _\ /\ \/\ \   /\  __ \   /\ "-.\ \   */
+        /* \ \ \/\ \ \ \ \_\ \  \ \____ \  \/_/\ \/ \ \ \_\ \  \ \  __ \  \ \ \-.  \  */
+        /*  \ \____-  \ \_____\  \/\_____\    \ \_\  \ \_____\  \ \_\ \_\  \ \_\\"\_\ */
+        /*   \/____/   \/_____/   \/_____/     \/_/   \/_____/   \/_/\/_/   \/_/ \/_/ */
+
+
+
         public MUA()
         {
             InitializeComponent();
@@ -188,6 +197,7 @@ namespace DoAn1_10122390
                 p.Visible = true;
                 them.Visible = true;
                 cbbmagiamgia.Enabled = true;
+                dtNgay.Enabled = true;
                 tbhoadon.Enabled = true;
                 cbbmanhanvien.Enabled = true;
 
@@ -216,7 +226,7 @@ namespace DoAn1_10122390
             dh.SoLuong = dgvGioHang.Rows[rowIndex].Cells["Column9"].Value.ToString();
             dh.MaNhanVien = cbbmanhanvien.Text;
             dh.Gia = tbTong.Text;
-
+            dh.NgayDat = dtNgay.Value;
             SanPhamDTO sp = new SanPhamDTO();
             int sltrongkho;
             int soluongmua;
@@ -236,6 +246,7 @@ namespace DoAn1_10122390
                 return;
             }
 
+            string result3 = BUS2.ThemNgayDat(dh);
             string result = BUS2.ThemChiTiet(dh);
             if (result == "2")
             {

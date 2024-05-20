@@ -74,3 +74,4 @@ C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DoAn1_10122390\bin\Debug\Entit
 C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DoAn1_10122390\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DoAn1_10122390\obj\Debug\DoAn1_10122390.LuongNhanVien.resources
 C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DoAn1_10122390\obj\Debug\DoAn1_10122390.Form2.resources
+C:\Users\tn097\OneDrive\Máy tính\DoAn1_10122390\DoAn1_10122390\obj\Debug\DoAn1_10122390.ThongKe.resources

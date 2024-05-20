@@ -30,17 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelmenu = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnMua = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labeltieude = new System.Windows.Forms.Label();
+            this.ptb2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.thunho = new System.Windows.Forms.PictureBox();
+            this.btnMua = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,24 +55,18 @@
             this.btnNhacungcap = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanvien = new Guna.UI2.WinForms.Guna2Button();
             this.btnThongtin = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ptb2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.thunho = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labeltieude = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelmenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thunho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelmenu
@@ -80,17 +80,6 @@
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(1166, 723);
             this.panelmenu.TabIndex = 3;
-            this.panelmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::DoAn1_10122390.Properties.Resources.qanh;
-            this.pictureBox4.Location = new System.Drawing.Point(321, 124);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(483, 437);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 64;
-            this.pictureBox4.TabStop = false;
             // 
             // label6
             // 
@@ -143,46 +132,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(226, 798);
             this.guna2Panel1.TabIndex = 69;
             // 
-            // btnMua
-            // 
-            this.btnMua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMua.FillColor = System.Drawing.Color.DarkCyan;
-            this.btnMua.Font = new System.Drawing.Font("Algerian", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMua.ForeColor = System.Drawing.Color.White;
-            this.btnMua.Image = global::DoAn1_10122390.Properties.Resources.muahang1;
-            this.btnMua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMua.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnMua.Location = new System.Drawing.Point(13, 557);
-            this.btnMua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMua.Name = "btnMua";
-            this.btnMua.Size = new System.Drawing.Size(207, 57);
-            this.btnMua.TabIndex = 76;
-            this.btnMua.Text = "BUY";
-            this.btnMua.Click += new System.EventHandler(this.btnMua_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button2.Font = new System.Drawing.Font("Algerian", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::DoAn1_10122390.Properties.Resources.khach_hang;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button2.Location = new System.Drawing.Point(3, 357);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(207, 57);
-            this.guna2Button2.TabIndex = 84;
-            this.guna2Button2.Text = "        Customer";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkCyan;
@@ -220,6 +169,134 @@
             this.label3.Size = new System.Drawing.Size(180, 57);
             this.label3.TabIndex = 10;
             this.label3.Text = "Welcome";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 50;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(-52, 34);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(275, 798);
+            this.guna2Button1.TabIndex = 74;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.ptb2);
+            this.guna2Panel2.Controls.Add(this.pictureBox2);
+            this.guna2Panel2.Controls.Add(this.thunho);
+            this.guna2Panel2.Controls.Add(this.label5);
+            this.guna2Panel2.Controls.Add(this.labeltieude);
+            this.guna2Panel2.Location = new System.Drawing.Point(340, 1);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1045, 69);
+            this.guna2Panel2.TabIndex = 70;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(332, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 70;
+            this.label5.Text = "label5";
+            // 
+            // labeltieude
+            // 
+            this.labeltieude.AutoSize = true;
+            this.labeltieude.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltieude.Location = new System.Drawing.Point(364, 2);
+            this.labeltieude.Name = "labeltieude";
+            this.labeltieude.Size = new System.Drawing.Size(124, 38);
+            this.labeltieude.TabIndex = 69;
+            this.labeltieude.Text = "HOME";
+            // 
+            // ptb2
+            // 
+            this.ptb2.AccessibleDescription = "";
+            this.ptb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptb2.Image = global::DoAn1_10122390.Properties.Resources._9;
+            this.ptb2.Location = new System.Drawing.Point(986, 12);
+            this.ptb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptb2.Name = "ptb2";
+            this.ptb2.Size = new System.Drawing.Size(43, 38);
+            this.ptb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb2.TabIndex = 71;
+            this.ptb2.TabStop = false;
+            this.ptb2.Click += new System.EventHandler(this.ptb2_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.AccessibleDescription = "";
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = global::DoAn1_10122390.Properties.Resources.đánh_giá;
+            this.pictureBox2.Location = new System.Drawing.Point(890, 12);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 73;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // thunho
+            // 
+            this.thunho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.thunho.Image = global::DoAn1_10122390.Properties.Resources.thu_nhỏ;
+            this.thunho.Location = new System.Drawing.Point(938, 12);
+            this.thunho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.thunho.Name = "thunho";
+            this.thunho.Size = new System.Drawing.Size(43, 38);
+            this.thunho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.thunho.TabIndex = 72;
+            this.thunho.TabStop = false;
+            this.thunho.Click += new System.EventHandler(this.thunho_Click);
+            // 
+            // btnMua
+            // 
+            this.btnMua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMua.FillColor = System.Drawing.Color.DarkCyan;
+            this.btnMua.Font = new System.Drawing.Font("Algerian", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMua.ForeColor = System.Drawing.Color.White;
+            this.btnMua.Image = global::DoAn1_10122390.Properties.Resources.muaban;
+            this.btnMua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMua.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnMua.Location = new System.Drawing.Point(13, 557);
+            this.btnMua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMua.Name = "btnMua";
+            this.btnMua.Size = new System.Drawing.Size(207, 57);
+            this.btnMua.TabIndex = 76;
+            this.btnMua.Text = "BUY";
+            this.btnMua.Click += new System.EventHandler(this.btnMua_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button2.Font = new System.Drawing.Font("Algerian", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = global::DoAn1_10122390.Properties.Resources.khach_hang;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(55, 55);
+            this.guna2Button2.Location = new System.Drawing.Point(3, 357);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(207, 57);
+            this.guna2Button2.TabIndex = 84;
+            this.guna2Button2.Text = "        Customer";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -289,10 +366,10 @@
             this.btnThongke.FillColor = System.Drawing.Color.DarkCyan;
             this.btnThongke.Font = new System.Drawing.Font("Algerian", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongke.ForeColor = System.Drawing.Color.White;
-            this.btnThongke.Image = global::DoAn1_10122390.Properties.Resources.báo_cáo_thông_kê;
+            this.btnThongke.Image = global::DoAn1_10122390.Properties.Resources.tk;
             this.btnThongke.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThongke.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnThongke.Location = new System.Drawing.Point(13, 618);
+            this.btnThongke.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnThongke.Location = new System.Drawing.Point(3, 618);
             this.btnThongke.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Size = new System.Drawing.Size(207, 64);
@@ -361,95 +438,15 @@
             this.btnThongtin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThongtin.Click += new System.EventHandler(this.btnThongtin_Click);
             // 
-            // guna2Button1
+            // pictureBox4
             // 
-            this.guna2Button1.BorderRadius = 50;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(-52, 34);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(275, 798);
-            this.guna2Button1.TabIndex = 74;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.ptb2);
-            this.guna2Panel2.Controls.Add(this.pictureBox2);
-            this.guna2Panel2.Controls.Add(this.thunho);
-            this.guna2Panel2.Controls.Add(this.label5);
-            this.guna2Panel2.Controls.Add(this.labeltieude);
-            this.guna2Panel2.Location = new System.Drawing.Point(340, 1);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1045, 69);
-            this.guna2Panel2.TabIndex = 70;
-            // 
-            // ptb2
-            // 
-            this.ptb2.AccessibleDescription = "";
-            this.ptb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ptb2.Image = global::DoAn1_10122390.Properties.Resources._9;
-            this.ptb2.Location = new System.Drawing.Point(986, 12);
-            this.ptb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptb2.Name = "ptb2";
-            this.ptb2.Size = new System.Drawing.Size(43, 38);
-            this.ptb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptb2.TabIndex = 71;
-            this.ptb2.TabStop = false;
-            this.ptb2.Click += new System.EventHandler(this.ptb2_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.AccessibleDescription = "";
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = global::DoAn1_10122390.Properties.Resources.đánh_giá;
-            this.pictureBox2.Location = new System.Drawing.Point(890, 12);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 73;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // thunho
-            // 
-            this.thunho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.thunho.Image = global::DoAn1_10122390.Properties.Resources.thu_nhỏ;
-            this.thunho.Location = new System.Drawing.Point(938, 12);
-            this.thunho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.thunho.Name = "thunho";
-            this.thunho.Size = new System.Drawing.Size(43, 38);
-            this.thunho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.thunho.TabIndex = 72;
-            this.thunho.TabStop = false;
-            this.thunho.Click += new System.EventHandler(this.thunho_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(332, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
-            // 
-            // labeltieude
-            // 
-            this.labeltieude.AutoSize = true;
-            this.labeltieude.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltieude.Location = new System.Drawing.Point(364, 2);
-            this.labeltieude.Name = "labeltieude";
-            this.labeltieude.Size = new System.Drawing.Size(124, 38);
-            this.labeltieude.TabIndex = 69;
-            this.labeltieude.Text = "HOME";
-            this.labeltieude.Click += new System.EventHandler(this.labeltieude_Click);
+            this.pictureBox4.Image = global::DoAn1_10122390.Properties.Resources.qanh;
+            this.pictureBox4.Location = new System.Drawing.Point(321, 124);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(483, 437);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 64;
+            this.pictureBox4.TabStop = false;
             // 
             // Menu
             // 
@@ -468,18 +465,18 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thunho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

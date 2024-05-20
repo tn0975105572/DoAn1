@@ -135,6 +135,7 @@
     <Compile Include="QuenMatKhauDAL.cs" />
     <Compile Include="SanPhamDAL.cs" />
     <Compile Include="SuaTaiKhoanDAL.cs" />
+    <Compile Include="ThongKeDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

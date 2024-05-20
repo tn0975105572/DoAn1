@@ -163,6 +163,16 @@ namespace DoAn1_10122390.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Anh_sp11 {
+            get {
+                object obj = ResourceManager.GetObject("Anh sp11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap báo_cáo_thông_kê {
             get {
                 object obj = ResourceManager.GetObject("báo cáo thông kê", resourceCulture);
@@ -326,6 +336,16 @@ namespace DoAn1_10122390.Properties {
         internal static System.Drawing.Bitmap icons8_youtube_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-youtube-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KH {
+            get {
+                object obj = ResourceManager.GetObject("KH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,6 +523,16 @@ namespace DoAn1_10122390.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap muaban {
+            get {
+                object obj = ResourceManager.GetObject("muaban", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap muahang {
             get {
                 object obj = ResourceManager.GetObject("muahang", resourceCulture);
@@ -576,6 +606,16 @@ namespace DoAn1_10122390.Properties {
         internal static System.Drawing.Bitmap nhân_viên_2 {
             get {
                 object obj = ResourceManager.GetObject("nhân viên 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NV {
+            get {
+                object obj = ResourceManager.GetObject("NV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -786,6 +826,26 @@ namespace DoAn1_10122390.Properties {
         internal static System.Drawing.Bitmap tìm_kiếm1 {
             get {
                 object obj = ResourceManager.GetObject("tìm kiếm1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap timetable {
+            get {
+                object obj = ResourceManager.GetObject("timetable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tk {
+            get {
+                object obj = ResourceManager.GetObject("tk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

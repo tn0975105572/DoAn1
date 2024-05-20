@@ -19,6 +19,14 @@ namespace DoAn1_10122390.chucnang
 {
     public partial class ThongTinCaNhan : UserControl
     {
+
+        /*  _____     __  __     __  __     ______   __  __     ______     __   __    */
+        /* /\  __-.  /\ \/\ \   /\ \_\ \   /\__  _\ /\ \/\ \   /\  __ \   /\ "-.\ \   */
+        /* \ \ \/\ \ \ \ \_\ \  \ \____ \  \/_/\ \/ \ \ \_\ \  \ \  __ \  \ \ \-.  \  */
+        /*  \ \____-  \ \_____\  \/\_____\    \ \_\  \ \_____\  \ \_\ \_\  \ \_\\"\_\ */
+        /*   \/____/   \/_____/   \/_____/     \/_/   \/_____/   \/_/\/_/   \/_/ \/_/ */
+
+
         private TaiKhoanDTO olodo4;
         public ThongTinCaNhan(TaiKhoanDTO olodo)
         {

@@ -15,6 +15,13 @@ namespace DoAn1_10122390
 {
     public partial class Menu : Form
     {
+        /*  _____     __  __     __  __     ______   __  __     ______     __   __    */
+        /* /\  __-.  /\ \/\ \   /\ \_\ \   /\__  _\ /\ \/\ \   /\  __ \   /\ "-.\ \   */
+        /* \ \ \/\ \ \ \ \_\ \  \ \____ \  \/_/\ \/ \ \ \_\ \  \ \  __ \  \ \ \-.  \  */
+        /*  \ \____-  \ \_____\  \/\_____\    \ \_\  \ \_____\  \ \_\ \_\  \ \_\\"\_\ */
+        /*   \/____/   \/_____/   \/_____/     \/_/   \/_____/   \/_/\/_/   \/_/ \/_/ */
+
+
         private TaiKhoanDTO olodo3;
         public Menu(TaiKhoanDTO olodo)
         {
@@ -62,10 +69,7 @@ namespace DoAn1_10122390
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
@@ -87,19 +91,7 @@ namespace DoAn1_10122390
             dn.ShowDialog();
         }
 
-        private void guna2Button9_Click(object sender, EventArgs e)
-        {
-            //labeltieude.Text = "Sản Phẩm";
-            //SanPham sp = new SanPham();
-            //if (panelmenu.Controls.Count == 0)
-            //{
-            //    panelmenu.Controls.Add(sp);
-            //}
-            //else
-            //{
-            //    panelmenu.Controls.Clear();
-            //};
-        }
+      
     
 
         private void btnNhanvien_Click(object sender, EventArgs e)
@@ -120,10 +112,7 @@ namespace DoAn1_10122390
 
         }
 
-        private void btnSanpham_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
         private void btnThongtin_Click(object sender, EventArgs e)
         {
@@ -152,6 +141,7 @@ namespace DoAn1_10122390
             {
                 panelmenu.Controls.Clear(); 
             }
+            labeltieude.Text = "Nhân Viên";
             pictureBox4.Visible = false;
         }
 
@@ -164,15 +154,22 @@ namespace DoAn1_10122390
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
-         
+            ThongKe nv = new ThongKe();
+            if (panelmenu.Controls.Count == 0)
+            {
+                panelmenu.Controls.Add(nv);
+            }
+            else
+            {
+                panelmenu.Controls.Clear();
+            }
+            labeltieude.Text = "Thống Kê-Báo Cáo";
+            pictureBox4.Visible = false;
+
         }
 
 
-        private void timerSP_Tick(object sender, EventArgs e)
-        {
-            
-
-        }
+      
 
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
@@ -183,15 +180,7 @@ namespace DoAn1_10122390
 
      
 
-        private void labeltieude_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {

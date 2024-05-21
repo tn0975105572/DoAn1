@@ -36,7 +36,7 @@ namespace DAL
         }
         public bool Them(TaiKhoanDTO tk)
         {
-            string query = string.Format("INSERT INTO TaiKhoan (TaiKhoan, MatKhau, Email, SDT) VALUES ( '{0}','{1}', '{2}', '{3}')", tk.Taikhoan,tk.Matkhau,tk.Email,tk.SDT);
+            string query = string.Format("INSERT INTO TaiKhoan (TaiKhoan, MatKhau, Email, SDT) VALUES ( '{0}',N'{1}',N '{2}', '{3}')", tk.Taikhoan,tk.Matkhau,tk.Email,tk.SDT);
             csdl.chaycodesql(query);
             return true;
             

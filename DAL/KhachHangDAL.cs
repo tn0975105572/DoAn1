@@ -37,7 +37,7 @@ namespace DAL
         public bool ThemKhachHang(KhachHangDTO HK)
         {
             int maKhachHangMoi = LayMaKhachHangTiepTheo();
-            string sql = string.Format("INSERT INTO KhachHang  VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
+            string sql = string.Format("INSERT INTO KhachHang  VALUES ('{0}', N'{1}', N'{2}', '{3}', N'{4}')",
                 maKhachHangMoi, HK.TenKH, HK.DiaChi, HK.SDT, HK.Email);
             csdl.chaycodesql(sql);
             return true;
@@ -45,7 +45,7 @@ namespace DAL
         }
         public bool SuanKhachHang(KhachHangDTO hk)
         {
-            string sql = string.Format("UPDATE KhachHang SET HoTen = '{0}', DiaChi = '{1}', SoDienThoai = '{2}',Email='{3}' WHERE MaKhachHang = '{4}'", hk.TenKH,hk.DiaChi,hk.SDT,hk.Email,hk.MaKH);
+            string sql = string.Format("UPDATE KhachHang SET HoTen = N'{0}', DiaChi = N'{1}', SoDienThoai = '{2}',Email=N'{3}' WHERE MaKhachHang = '{4}'", hk.TenKH,hk.DiaChi,hk.SDT,hk.Email,hk.MaKH);
             csdl.chaycodesql(sql);
             return true;
         }

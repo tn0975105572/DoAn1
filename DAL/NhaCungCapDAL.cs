@@ -42,14 +42,14 @@ namespace DAL
             //csdl.chaycodesql(sql);
             //return true;
             int maNhaCungCapMoi = LayMaNhaCungCapTiepTheo();
-            string sql = string.Format("INSERT INTO NhaCungCap  VALUES ('{0}', '{1}', '{2}', '{3}')",
+            string sql = string.Format("INSERT INTO NhaCungCap  VALUES ('{0}', N'{1}', N'{2}', '{3}')",
                 maNhaCungCapMoi, ncc.Tennhacc, ncc.Diachi, ncc.SDT);
             csdl.chaycodesql(sql);
             return true;
         }
         public bool Suanhacc(NhaCungCapDTO ncc)
         {
-            string sql = string.Format("UPDATE NhaCungCap SET TenNhaCungCap = '{0}', DiaChi = '{1}', SoDienThoai = '{2}' WHERE MaNhaCungCap = '{3}'",ncc.Tennhacc,ncc.Diachi,ncc.SDT,ncc.ManhaCC );
+            string sql = string.Format("UPDATE NhaCungCap SET TenNhaCungCap = N'{0}', DiaChi = N'{1}', SoDienThoai = '{2}' WHERE MaNhaCungCap = '{3}'",ncc.Tennhacc,ncc.Diachi,ncc.SDT,ncc.ManhaCC );
             csdl.chaycodesql(sql);
             return true;
         }

@@ -19,7 +19,7 @@ namespace DAL
         }
         public bool Doi(TaiKhoanDTO tk)
         {
-            string  query = string.Format("UPDATE TaiKhoan SET MatKhau = '{0}', Email = '{1}', SDT = '{2}' WHERE TaiKhoan = '{3}'", tk.Matkhau, tk.Email, tk.SDT, tk.Taikhoan);
+            string  query = string.Format("UPDATE TaiKhoan SET MatKhau = '{0}', Email = N'{1}', SDT = '{2}' WHERE TaiKhoan = '{3}'", tk.Matkhau, tk.Email, tk.SDT, tk.Taikhoan);
             csdl.chaycodesql(query);
             return true;
         }

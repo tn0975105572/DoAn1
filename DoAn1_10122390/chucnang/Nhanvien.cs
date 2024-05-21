@@ -42,8 +42,8 @@ namespace DoAn1_10122390
             dgvNhanvien.DataSource = BUS.getData();
             dgvNhanvien.Columns[0].HeaderText = "Mã NV ";
             dgvNhanvien.Columns[1].HeaderText = "Tên NV";
-            dgvNhanvien.Columns[2].HeaderText = "GioiTinh";
-            dgvNhanvien.Columns[3].HeaderText = "NgaySinh";
+            dgvNhanvien.Columns[2].HeaderText = "Giới Tính";
+            dgvNhanvien.Columns[3].HeaderText = "Ngày sinh";
             dgvNhanvien.Columns[4].HeaderText = "Địa Chỉ";
             dgvNhanvien.Columns[5].HeaderText = "SĐT";
             dgvNhanvien.Columns[6].HeaderText = "Email";

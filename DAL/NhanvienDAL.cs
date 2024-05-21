@@ -41,7 +41,7 @@ namespace DAL
         {
         
             int maNhanVienMoi = LayMaNhanVienTiepTheo();
-            string sql = string.Format("Insert into NhanVien values('{0}','{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", maNhanVienMoi, nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email);
+            string sql = string.Format("Insert into NhanVien values('{0}',N'{1}', '{2}', '{3}', N'{4}', '{5}', N'{6}')", maNhanVienMoi, nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email);
             csdl.chaycodesql(sql);
             return true;
 
@@ -49,7 +49,7 @@ namespace DAL
         }
         public bool Suavn(NhanVienDTO nv)
         {
-            string sql = string.Format("UPDATE NhanVien SET HoTen = '{0}', GioiTinh = '{1}', NgaySinh = '{2}', DiaChi = '{3}', SoDienThoai = '{4}', Email = '{5}' WHERE MaNhanVien = '{6}'", nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email, nv.Manv);
+            string sql = string.Format("UPDATE NhanVien SET HoTen = N'{0}', GioiTinh = '{1}', NgaySinh = '{2}', DiaChi = N'{3}', SoDienThoai = '{4}', Email = N'{5}' WHERE MaNhanVien = '{6}'", nv.Tennv, nv.Gioitinh, nv.Ngaysinh.ToString("yyyy-MM-dd"), nv.Diachi, nv.Sodienthoai, nv.Email, nv.Manv);
             csdl.chaycodesql(sql);
             return true;
         }
@@ -62,7 +62,7 @@ namespace DAL
 
         public DataTable TimKiemNhanVien(string keyword)
         {
-            string sql = string.Format("SELECT * FROM NhanVien WHERE MaNhanVien LIKE '%{0}%' OR HoTen LIKE '%{0}%'", keyword);
+            string sql = string.Format("SELECT * FROM NhanVien WHERE MaNhanVien LIKE '%{0}%' OR HoTen LIKE N'%{0}%'", keyword);
             return csdl.getData(sql);
         }
 

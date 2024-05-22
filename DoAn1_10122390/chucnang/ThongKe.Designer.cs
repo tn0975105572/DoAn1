@@ -28,41 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.paneldulieu = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.bttThem = new Guna.UI2.WinForms.Guna2Button();
+            this.dateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.BieuDoCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.l1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.BieuDoCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.paneldulieu = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.dateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.bttThem = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.paneldulieu.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BieuDoCot)).BeginInit();
-            this.paneldulieu.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -81,6 +84,139 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(855, 581);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // paneldulieu
+            // 
+            this.paneldulieu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.paneldulieu.BorderRadius = 20;
+            this.paneldulieu.BorderThickness = 2;
+            this.paneldulieu.Controls.Add(this.guna2HtmlLabel4);
+            this.paneldulieu.Controls.Add(this.guna2HtmlLabel5);
+            this.paneldulieu.Controls.Add(this.dateTimePicker1);
+            this.paneldulieu.Controls.Add(this.bttThem);
+            this.paneldulieu.Controls.Add(this.dateTimePicker2);
+            this.paneldulieu.Controls.Add(this.guna2HtmlLabel3);
+            this.paneldulieu.Location = new System.Drawing.Point(572, 156);
+            this.paneldulieu.Name = "paneldulieu";
+            this.paneldulieu.Size = new System.Drawing.Size(266, 397);
+            this.paneldulieu.TabIndex = 16;
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(7, 180);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(118, 22);
+            this.guna2HtmlLabel4.TabIndex = 51;
+            this.guna2HtmlLabel4.Text = "Ngày Kết Thúc:";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(7, 75);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(112, 22);
+            this.guna2HtmlLabel5.TabIndex = 50;
+            this.guna2HtmlLabel5.Text = "Ngày Bắt Đầu:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.BorderRadius = 15;
+            this.dateTimePicker1.BorderThickness = 2;
+            this.dateTimePicker1.Checked = true;
+            this.dateTimePicker1.FillColor = System.Drawing.Color.Green;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 103);
+            this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(232, 59);
+            this.dateTimePicker1.TabIndex = 48;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 4, 28, 15, 21, 38, 467);
+            // 
+            // bttThem
+            // 
+            this.bttThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.bttThem.BorderRadius = 15;
+            this.bttThem.BorderThickness = 2;
+            this.bttThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bttThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bttThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bttThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bttThem.FillColor = System.Drawing.Color.DarkCyan;
+            this.bttThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttThem.ForeColor = System.Drawing.Color.White;
+            this.bttThem.Image = global::DoAn1_10122390.Properties.Resources.timetable;
+            this.bttThem.ImageSize = new System.Drawing.Size(50, 50);
+            this.bttThem.Location = new System.Drawing.Point(51, 311);
+            this.bttThem.Name = "bttThem";
+            this.bttThem.Size = new System.Drawing.Size(179, 52);
+            this.bttThem.TabIndex = 47;
+            this.bttThem.Text = "&Thống Kê";
+            this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.BorderRadius = 15;
+            this.dateTimePicker2.BorderThickness = 2;
+            this.dateTimePicker2.Checked = true;
+            this.dateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTimePicker2.Location = new System.Drawing.Point(20, 208);
+            this.dateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(232, 52);
+            this.dateTimePicker2.TabIndex = 18;
+            this.dateTimePicker2.Value = new System.DateTime(2024, 4, 28, 15, 21, 38, 467);
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 13);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(154, 18);
+            this.guna2HtmlLabel3.TabIndex = 0;
+            this.guna2HtmlLabel3.Text = "Tìm kiếm Ngày Khảo Sát:";
+            // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2GroupBox1.BorderRadius = 20;
+            this.guna2GroupBox1.BorderThickness = 3;
+            this.guna2GroupBox1.Controls.Add(this.BieuDoCot);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(24, 156);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(531, 397);
+            this.guna2GroupBox1.TabIndex = 3;
+            this.guna2GroupBox1.Text = "Biểu Đồ Thống Kê Sản Phẩm Bán Chạy";
+            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BieuDoCot
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.BieuDoCot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.BieuDoCot.Legends.Add(legend1);
+            this.BieuDoCot.Location = new System.Drawing.Point(4, 44);
+            this.BieuDoCot.Name = "BieuDoCot";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.BieuDoCot.Series.Add(series1);
+            this.BieuDoCot.Size = new System.Drawing.Size(524, 336);
+            this.BieuDoCot.TabIndex = 0;
+            this.BieuDoCot.Text = "chart1";
             // 
             // guna2Panel3
             // 
@@ -104,6 +240,18 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.Image = global::DoAn1_10122390.Properties.Resources.Anh_sp11;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(0, 42);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(48, 49);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 6;
+            this.guna2CirclePictureBox3.TabStop = false;
             // 
             // guna2HtmlLabel2
             // 
@@ -138,6 +286,18 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "label2";
             // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.Image = global::DoAn1_10122390.Properties.Resources.NV;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(0, 42);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(48, 49);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 5;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -162,6 +322,18 @@
             this.guna2Panel1.Size = new System.Drawing.Size(238, 91);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::DoAn1_10122390.Properties.Resources.KH;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 39);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(48, 49);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 4;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // l1
             // 
             this.l1.BackColor = System.Drawing.Color.Transparent;
@@ -184,174 +356,9 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
-            // guna2GroupBox1
+            // errorProvider1
             // 
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.BorderThickness = 3;
-            this.guna2GroupBox1.Controls.Add(this.BieuDoCot);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(24, 156);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(531, 397);
-            this.guna2GroupBox1.TabIndex = 3;
-            this.guna2GroupBox1.Text = "Biểu Đồ Thống Kê Sản Phẩm Bán Chạy";
-            this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BieuDoCot
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.BieuDoCot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.BieuDoCot.Legends.Add(legend1);
-            this.BieuDoCot.Location = new System.Drawing.Point(4, 44);
-            this.BieuDoCot.Name = "BieuDoCot";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.BieuDoCot.Series.Add(series1);
-            this.BieuDoCot.Size = new System.Drawing.Size(524, 336);
-            this.BieuDoCot.TabIndex = 0;
-            this.BieuDoCot.Text = "chart1";
-            // 
-            // paneldulieu
-            // 
-            this.paneldulieu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.paneldulieu.BorderRadius = 20;
-            this.paneldulieu.BorderThickness = 2;
-            this.paneldulieu.Controls.Add(this.guna2HtmlLabel4);
-            this.paneldulieu.Controls.Add(this.guna2HtmlLabel5);
-            this.paneldulieu.Controls.Add(this.dateTimePicker1);
-            this.paneldulieu.Controls.Add(this.bttThem);
-            this.paneldulieu.Controls.Add(this.dateTimePicker2);
-            this.paneldulieu.Controls.Add(this.guna2HtmlLabel3);
-            this.paneldulieu.Location = new System.Drawing.Point(572, 156);
-            this.paneldulieu.Name = "paneldulieu";
-            this.paneldulieu.Size = new System.Drawing.Size(266, 397);
-            this.paneldulieu.TabIndex = 16;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(20, 13);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(154, 18);
-            this.guna2HtmlLabel3.TabIndex = 0;
-            this.guna2HtmlLabel3.Text = "Tìm kiếm Ngày Khảo Sát:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.BorderRadius = 15;
-            this.dateTimePicker2.BorderThickness = 2;
-            this.dateTimePicker2.Checked = true;
-            this.dateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTimePicker2.Location = new System.Drawing.Point(20, 208);
-            this.dateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(232, 52);
-            this.dateTimePicker2.TabIndex = 18;
-            this.dateTimePicker2.Value = new System.DateTime(2024, 4, 28, 15, 21, 38, 467);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.BorderRadius = 15;
-            this.dateTimePicker1.BorderThickness = 2;
-            this.dateTimePicker1.Checked = true;
-            this.dateTimePicker1.FillColor = System.Drawing.Color.Green;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 103);
-            this.dateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 59);
-            this.dateTimePicker1.TabIndex = 48;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 4, 28, 15, 21, 38, 467);
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(7, 75);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(112, 22);
-            this.guna2HtmlLabel5.TabIndex = 50;
-            this.guna2HtmlLabel5.Text = "Ngày Bắt Đầu:";
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(7, 180);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(118, 22);
-            this.guna2HtmlLabel4.TabIndex = 51;
-            this.guna2HtmlLabel4.Text = "Ngày Kết Thúc:";
-            // 
-            // bttThem
-            // 
-            this.bttThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.bttThem.BorderRadius = 15;
-            this.bttThem.BorderThickness = 2;
-            this.bttThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttThem.FillColor = System.Drawing.Color.DarkCyan;
-            this.bttThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttThem.ForeColor = System.Drawing.Color.White;
-            this.bttThem.Image = global::DoAn1_10122390.Properties.Resources.timetable;
-            this.bttThem.ImageSize = new System.Drawing.Size(50, 50);
-            this.bttThem.Location = new System.Drawing.Point(51, 311);
-            this.bttThem.Name = "bttThem";
-            this.bttThem.Size = new System.Drawing.Size(179, 52);
-            this.bttThem.TabIndex = 47;
-            this.bttThem.Text = "&Thống Kê";
-            this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = global::DoAn1_10122390.Properties.Resources.Anh_sp11;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(0, 42);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(48, 49);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 6;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.Image = global::DoAn1_10122390.Properties.Resources.NV;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(0, 42);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(48, 49);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 5;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::DoAn1_10122390.Properties.Resources.KH;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 39);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(48, 49);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 4;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.errorProvider1.ContainerControl = this;
             // 
             // ThongKe
             // 
@@ -361,19 +368,20 @@
             this.Size = new System.Drawing.Size(885, 611);
             this.Load += new System.EventHandler(this.ThongKe_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BieuDoCot)).EndInit();
             this.paneldulieu.ResumeLayout(false);
             this.paneldulieu.PerformLayout();
+            this.guna2GroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BieuDoCot)).EndInit();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,5 +410,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

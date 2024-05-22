@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -84,14 +85,33 @@ namespace DoAn1_10122390
 
         }
 
-  
 
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+            return Regex.IsMatch(phoneNumber, @"^0\d{9}$");
+        }
+
+        private bool ValidateEmail(string email)
+        {
+            return Regex.IsMatch(email, @"^[\w\.-]+@gmail\.com$");
+        }
         public void bttThem_Click(object sender, EventArgs e)
         {
            
             if (string.IsNullOrEmpty(tbTen.Text) || cbGioiTinh.SelectedItem == null || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (!ValidatePhoneNumber(tbSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!ValidateEmail(tbEmail.Text))
+            {
+                MessageBox.Show("Email không hợp lệ! Email phải có định dạng @gmail.com.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {

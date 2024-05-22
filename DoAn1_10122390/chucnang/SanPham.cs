@@ -67,6 +67,14 @@ namespace DoAn1_10122390
 
         private void bttThem_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbTensp.Text) || string.IsNullOrWhiteSpace(tbGia.Text) ||
+                string.IsNullOrWhiteSpace(tbMota.Text) || string.IsNullOrWhiteSpace(tbMacc.Text) ||
+                string.IsNullOrWhiteSpace(tbSoluong.Text))
+            {
+                MessageBox.Show("Không được bỏ trống các trường.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int count = dgvSanpham.Rows.Count;
 
             if (count > 0)
@@ -176,20 +184,5 @@ namespace DoAn1_10122390
 
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void dgvSanpham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tbMacc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

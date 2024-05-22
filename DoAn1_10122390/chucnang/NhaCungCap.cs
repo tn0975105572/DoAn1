@@ -12,6 +12,7 @@ using System.Linq;
 
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,10 +86,18 @@ namespace DoAn1_10122390
         {
 
         }
-
+        private bool ValidatePhoneNumber(string phoneNumber)
+        {
+            return Regex.IsMatch(phoneNumber, @"^0\d{9}$");
+        }
         private void btthem_Click(object sender, EventArgs e)
         {
             // Kiểm tra các trường thông tin có rỗng không
+            if (!ValidatePhoneNumber(tbSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrEmpty(tbTennhacungcap.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

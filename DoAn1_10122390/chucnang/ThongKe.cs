@@ -47,6 +47,15 @@ namespace DoAn1_10122390
 
         private void bttThem_Click(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
+            {
+                errorProvider1.SetError(dateTimePicker1, "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePicker1, null);
+            }
             try
             {
                 DataTable dt = new DataTable();

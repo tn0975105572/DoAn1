@@ -97,20 +97,27 @@ namespace DoAn1_10122390
         }
         public void bttThem_Click(object sender, EventArgs e)
         {
-           
-            if (string.IsNullOrEmpty(tbTen.Text) || cbGioiTinh.SelectedItem == null || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (!ValidatePhoneNumber(tbSDT.Text))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            if (!ValidateEmail(tbEmail.Text))
+            if (string.IsNullOrEmpty(tbTen.Text) ||
+                cbGioiTinh.SelectedItem == null ||
+                string.IsNullOrEmpty(tbDiachi.Text) ||
+                string.IsNullOrEmpty(tbSDT.Text) ||
+                string.IsNullOrEmpty(tbEmail.Text) ||
+                !ValidatePhoneNumber(tbSDT.Text) ||
+                !ValidateEmail(tbEmail.Text))
             {
-                MessageBox.Show("Email không hợp lệ! Email phải có định dạng @gmail.com.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (string.IsNullOrEmpty(tbTen.Text) || cbGioiTinh.SelectedItem == null || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (!ValidatePhoneNumber(tbSDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (!ValidateEmail(tbEmail.Text))
+                {
+                    MessageBox.Show("Email không hợp lệ! Email phải có định dạng @gmail.com.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 return;
             }
             else
@@ -166,6 +173,11 @@ namespace DoAn1_10122390
 
         private void btSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbTen.Text) || cbGioiTinh.SelectedItem == null || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để sửa thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
             NhanVienDTO nv = new NhanVienDTO();
             nv.Manv = tbMa.Text;
             nv.Tennv = tbTen.Text;
@@ -174,7 +186,20 @@ namespace DoAn1_10122390
             nv.Diachi = tbDiachi.Text;
             nv.Sodienthoai = tbSDT.Text;
             nv.Email = tbEmail.Text;
+            string currentTen = dgvNhanvien.CurrentRow.Cells[1].Value.ToString();
+            string currentGioiTinh = dgvNhanvien.CurrentRow.Cells[2].Value.ToString();
+            DateTime currentNgaySinh = (DateTime)dgvNhanvien.CurrentRow.Cells[3].Value;
+            string currentDiaChi = dgvNhanvien.CurrentRow.Cells[4].Value.ToString();
+            string currentSDT = dgvNhanvien.CurrentRow.Cells[5].Value.ToString();
+            string currentEmail = dgvNhanvien.CurrentRow.Cells[6].Value.ToString();
 
+
+            if (currentTen == tbTen.Text && currentGioiTinh == cbGioiTinh.SelectedItem.ToString() && currentNgaySinh == dtNgay.Value &&
+                currentDiaChi == tbDiachi.Text && currentSDT == tbSDT.Text && currentEmail == tbEmail.Text)
+            {
+                MessageBox.Show("Bạn không có thay đổi nào để lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string result = BUS.Suanv(nv);
             if (result == "Sửa thành công")
             {
@@ -191,6 +216,11 @@ namespace DoAn1_10122390
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbMa.Text))
+            {
+                MessageBox.Show("Vui lòng chọn một nhân viên để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu không có nhân viên được chọn
+            }
             string maNV = tbMa.Text;
             DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)

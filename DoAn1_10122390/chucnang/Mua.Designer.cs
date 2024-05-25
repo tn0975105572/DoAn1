@@ -36,7 +36,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cbbkh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.them = new Guna.UI2.WinForms.Guna2Button();
             this.p = new System.Windows.Forms.Panel();
             this.NUDSoluong = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -95,10 +97,10 @@
             this.guna2Panel1.BorderColor = System.Drawing.Color.DarkCyan;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 4;
-            this.guna2Panel1.Controls.Add(this.dtNgay);
             this.guna2Panel1.Controls.Add(this.them);
             this.guna2Panel1.Controls.Add(this.p);
             this.guna2Panel1.Controls.Add(this.bttaomoi);
+            this.guna2Panel1.Controls.Add(this.dtNgay);
             this.guna2Panel1.Controls.Add(this.pGH);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.pSP);
@@ -108,8 +110,19 @@
             this.guna2Panel1.Size = new System.Drawing.Size(863, 581);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(11, 338);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(123, 24);
+            this.guna2HtmlLabel12.TabIndex = 87;
+            this.guna2HtmlLabel12.Text = "Mã Nhân Viên:";
+            // 
             // dtNgay
             // 
+            this.dtNgay.BackColor = System.Drawing.Color.White;
             this.dtNgay.BorderRadius = 15;
             this.dtNgay.BorderThickness = 2;
             this.dtNgay.Checked = true;
@@ -117,13 +130,32 @@
             this.dtNgay.FillColor = System.Drawing.Color.Green;
             this.dtNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.dtNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtNgay.Location = new System.Drawing.Point(356, 425);
+            this.dtNgay.Location = new System.Drawing.Point(338, 419);
             this.dtNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtNgay.Name = "dtNgay";
-            this.dtNgay.Size = new System.Drawing.Size(194, 46);
+            this.dtNgay.Size = new System.Drawing.Size(192, 47);
             this.dtNgay.TabIndex = 10;
             this.dtNgay.Value = new System.DateTime(2024, 4, 28, 15, 21, 38, 467);
+            this.dtNgay.ValueChanged += new System.EventHandler(this.dtNgay_ValueChanged);
+            // 
+            // cbbkh
+            // 
+            this.cbbkh.BackColor = System.Drawing.Color.Transparent;
+            this.cbbkh.BorderColor = System.Drawing.Color.Black;
+            this.cbbkh.BorderRadius = 15;
+            this.cbbkh.BorderThickness = 2;
+            this.cbbkh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbkh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbkh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbkh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbkh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbkh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbkh.ItemHeight = 30;
+            this.cbbkh.Location = new System.Drawing.Point(174, 330);
+            this.cbbkh.Name = "cbbkh";
+            this.cbbkh.Size = new System.Drawing.Size(102, 36);
+            this.cbbkh.TabIndex = 86;
             // 
             // them
             // 
@@ -160,6 +192,7 @@
             this.NUDSoluong.BackColor = System.Drawing.Color.Transparent;
             this.NUDSoluong.BorderRadius = 15;
             this.NUDSoluong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NUDSoluong.Enabled = false;
             this.NUDSoluong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NUDSoluong.Location = new System.Drawing.Point(105, 8);
             this.NUDSoluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -348,7 +381,9 @@
             this.guna2Panel3.BorderColor = System.Drawing.Color.DarkCyan;
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.BorderThickness = 4;
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel12);
             this.guna2Panel3.Controls.Add(this.tbmasp);
+            this.guna2Panel3.Controls.Add(this.cbbkh);
             this.guna2Panel3.Controls.Add(this.tbsLtrongkho);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel11);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel10);
@@ -386,7 +421,7 @@
             this.tbmasp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbmasp.ForeColor = System.Drawing.Color.Black;
             this.tbmasp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbmasp.Location = new System.Drawing.Point(164, 189);
+            this.tbmasp.Location = new System.Drawing.Point(168, 161);
             this.tbmasp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbmasp.Name = "tbmasp";
             this.tbmasp.PasswordChar = '\0';
@@ -411,7 +446,7 @@
             this.tbsLtrongkho.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbsLtrongkho.ForeColor = System.Drawing.Color.Black;
             this.tbsLtrongkho.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbsLtrongkho.Location = new System.Drawing.Point(168, 234);
+            this.tbsLtrongkho.Location = new System.Drawing.Point(168, 206);
             this.tbsLtrongkho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbsLtrongkho.Name = "tbsLtrongkho";
             this.tbsLtrongkho.PasswordChar = '\0';
@@ -425,7 +460,7 @@
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(11, 240);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(11, 212);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(159, 24);
             this.guna2HtmlLabel11.TabIndex = 83;
@@ -455,7 +490,7 @@
             this.cbbmagiamgia.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbmagiamgia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbmagiamgia.ItemHeight = 30;
-            this.cbbmagiamgia.Location = new System.Drawing.Point(174, 336);
+            this.cbbmagiamgia.Location = new System.Drawing.Point(174, 288);
             this.cbbmagiamgia.Name = "cbbmagiamgia";
             this.cbbmagiamgia.Size = new System.Drawing.Size(102, 36);
             this.cbbmagiamgia.TabIndex = 81;
@@ -476,7 +511,7 @@
             this.tbhoadon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbhoadon.ForeColor = System.Drawing.Color.Black;
             this.tbhoadon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbhoadon.Location = new System.Drawing.Point(128, 146);
+            this.tbhoadon.Location = new System.Drawing.Point(132, 118);
             this.tbhoadon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbhoadon.Name = "tbhoadon";
             this.tbhoadon.PasswordChar = '\0';
@@ -490,7 +525,7 @@
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(203, 358);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(207, 330);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel9.TabIndex = 78;
@@ -520,7 +555,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(11, 348);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(14, 300);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(117, 24);
             this.guna2HtmlLabel6.TabIndex = 70;
@@ -530,7 +565,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(14, 290);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(11, 255);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(123, 24);
             this.guna2HtmlLabel5.TabIndex = 69;
@@ -540,7 +575,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(6, 195);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(11, 167);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(117, 24);
             this.guna2HtmlLabel4.TabIndex = 68;
@@ -560,7 +595,7 @@
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(7, 155);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(11, 127);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(112, 24);
             this.guna2HtmlLabel7.TabIndex = 65;
@@ -648,10 +683,11 @@
             this.cbbmanhanvien.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbmanhanvien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbmanhanvien.ItemHeight = 30;
-            this.cbbmanhanvien.Location = new System.Drawing.Point(177, 285);
+            this.cbbmanhanvien.Location = new System.Drawing.Point(174, 250);
             this.cbbmanhanvien.Name = "cbbmanhanvien";
             this.cbbmanhanvien.Size = new System.Drawing.Size(102, 36);
             this.cbbmanhanvien.TabIndex = 18;
+            this.cbbmanhanvien.SelectedIndexChanged += new System.EventHandler(this.cbbmanhanvien_SelectedIndexChanged);
             // 
             // pSP
             // 
@@ -843,5 +879,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2TextBox tbmasp;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtNgay;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbkh;
     }
 }

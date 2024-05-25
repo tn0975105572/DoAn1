@@ -148,9 +148,11 @@ namespace DoAn1_10122390
 
         private void anhdaidien_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu dk = new Menu(olodo1);
-            dk.ShowDialog();
+            tbtendangnhap.Text = "123";
+            tbmk.Text = "123";
+            btdangnhap_Click(this, EventArgs.Empty);
+
+
         }
 
         private void tbmk_TextChanged(object sender, EventArgs e)

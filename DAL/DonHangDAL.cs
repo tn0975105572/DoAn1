@@ -54,10 +54,10 @@ namespace DAL
             return true;
 
         }
-
+      
         public bool ThemNgayDonHang(DonHangDTO DH)
         {
-            string sql = string.Format("UPDATE DonHang SET NgayDat = '{0}' WHERE MaDonHang = {1}", DH.NgayDat.ToString("yyyy-MM-dd"), DH.MaDonHang);
+            string sql = string.Format("UPDATE DonHang SET NgayDat = '{0}',MaKhachHang = '{1}' WHERE MaDonHang = {2}", DH.NgayDat.ToString("yyyy-MM-dd"),DH.MaKhachHang, DH.MaDonHang);
             csdl.chaycodesql(sql);
             return true;
         }

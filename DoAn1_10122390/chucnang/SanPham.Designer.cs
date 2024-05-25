@@ -52,20 +52,16 @@
             this.tbGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbTensp = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbMasp = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.ptbAnh = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btSua = new Guna.UI2.WinForms.Guna2Button();
             this.bttThem = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanpham)).BeginInit();
             this.pnbang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbSoluong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSanpham
@@ -103,7 +99,7 @@
             this.dgvSanpham.RowHeadersVisible = false;
             this.dgvSanpham.RowHeadersWidth = 51;
             this.dgvSanpham.RowTemplate.Height = 24;
-            this.dgvSanpham.Size = new System.Drawing.Size(808, 228);
+            this.dgvSanpham.Size = new System.Drawing.Size(808, 215);
             this.dgvSanpham.TabIndex = 56;
             this.dgvSanpham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvSanpham.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -127,7 +123,6 @@
             this.dgvSanpham.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSanpham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvSanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanpham_CellClick);
-            
             // 
             // Column1
             // 
@@ -190,16 +185,13 @@
             this.pnbang.Controls.Add(this.tbGia);
             this.pnbang.Controls.Add(this.tbTensp);
             this.pnbang.Controls.Add(this.tbMasp);
-            this.pnbang.Controls.Add(this.guna2Button2);
-            this.pnbang.Controls.Add(this.ptbAnh);
             this.pnbang.Controls.Add(this.guna2Button1);
             this.pnbang.Controls.Add(this.btXoa);
             this.pnbang.Controls.Add(this.btSua);
             this.pnbang.Controls.Add(this.bttThem);
-            this.pnbang.Controls.Add(this.guna2TextBox2);
             this.pnbang.Location = new System.Drawing.Point(21, 66);
             this.pnbang.Name = "pnbang";
-            this.pnbang.Size = new System.Drawing.Size(843, 530);
+            this.pnbang.Size = new System.Drawing.Size(843, 522);
             this.pnbang.TabIndex = 58;
             // 
             // tbMacc
@@ -215,7 +207,7 @@
             this.tbMacc.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.tbMacc.ItemHeight = 30;
-            this.tbMacc.Location = new System.Drawing.Point(413, 103);
+            this.tbMacc.Location = new System.Drawing.Point(597, 103);
             this.tbMacc.Name = "tbMacc";
             this.tbMacc.Size = new System.Drawing.Size(228, 36);
             this.tbMacc.TabIndex = 64;
@@ -237,7 +229,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(17, 164);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(17, 162);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(72, 18);
             this.guna2HtmlLabel6.TabIndex = 62;
@@ -246,10 +238,10 @@
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(413, 73);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(474, 108);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(80, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(117, 27);
             this.guna2HtmlLabel5.TabIndex = 61;
             this.guna2HtmlLabel5.Text = "Mã NhàCC:";
             // 
@@ -257,7 +249,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(260, 160);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(322, 155);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(56, 22);
             this.guna2HtmlLabel4.TabIndex = 60;
@@ -266,30 +258,30 @@
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(413, 3);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(519, 34);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(61, 20);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(78, 27);
             this.guna2HtmlLabel3.TabIndex = 59;
             this.guna2HtmlLabel3.Text = "Giá SP:";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(17, 78);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 103);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(54, 18);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(77, 27);
             this.guna2HtmlLabel2.TabIndex = 58;
             this.guna2HtmlLabel2.Text = "TênSP:";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(19, 5);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(37, 32);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(52, 18);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(75, 27);
             this.guna2HtmlLabel1.TabIndex = 57;
             this.guna2HtmlLabel1.Text = "Mã SP:";
             // 
@@ -307,13 +299,13 @@
             this.tbMota.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMota.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbMota.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMota.Location = new System.Drawing.Point(322, 151);
+            this.tbMota.Location = new System.Drawing.Point(384, 146);
             this.tbMota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbMota.Name = "tbMota";
             this.tbMota.PasswordChar = '\0';
             this.tbMota.PlaceholderText = "Mô tả sản phẩm";
             this.tbMota.SelectedText = "";
-            this.tbMota.Size = new System.Drawing.Size(319, 40);
+            this.tbMota.Size = new System.Drawing.Size(441, 40);
             this.tbMota.TabIndex = 53;
             // 
             // tbGia
@@ -330,7 +322,7 @@
             this.tbGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGia.Location = new System.Drawing.Point(413, 26);
+            this.tbGia.Location = new System.Drawing.Point(597, 27);
             this.tbGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbGia.Name = "tbGia";
             this.tbGia.PasswordChar = '\0';
@@ -354,7 +346,7 @@
             this.tbTensp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbTensp.ForeColor = System.Drawing.Color.Black;
             this.tbTensp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTensp.Location = new System.Drawing.Point(17, 103);
+            this.tbTensp.Location = new System.Drawing.Point(115, 98);
             this.tbTensp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTensp.Name = "tbTensp";
             this.tbTensp.PasswordChar = '\0';
@@ -378,7 +370,7 @@
             this.tbMasp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbMasp.ForeColor = System.Drawing.Color.Black;
             this.tbMasp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMasp.Location = new System.Drawing.Point(17, 27);
+            this.tbMasp.Location = new System.Drawing.Point(120, 23);
             this.tbMasp.Margin = new System.Windows.Forms.Padding(4);
             this.tbMasp.Name = "tbMasp";
             this.tbMasp.PasswordChar = '\0';
@@ -386,35 +378,6 @@
             this.tbMasp.SelectedText = "";
             this.tbMasp.Size = new System.Drawing.Size(282, 44);
             this.tbMasp.TabIndex = 50;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(694, 171);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(110, 51);
-            this.guna2Button2.TabIndex = 49;
-            this.guna2Button2.Text = "&Thêm";
-            // 
-            // ptbAnh
-            // 
-            this.ptbAnh.ImageRotate = 0F;
-            this.ptbAnh.Location = new System.Drawing.Point(672, 20);
-            this.ptbAnh.Name = "ptbAnh";
-            this.ptbAnh.Size = new System.Drawing.Size(135, 135);
-            this.ptbAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbAnh.TabIndex = 48;
-            this.ptbAnh.TabStop = false;
             // 
             // guna2Button1
             // 
@@ -451,7 +414,7 @@
             this.btXoa.ForeColor = System.Drawing.Color.White;
             this.btXoa.Image = global::DoAn1_10122390.Properties.Resources.Xoa;
             this.btXoa.ImageSize = new System.Drawing.Size(30, 30);
-            this.btXoa.Location = new System.Drawing.Point(359, 212);
+            this.btXoa.Location = new System.Drawing.Point(446, 212);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(134, 46);
             this.btXoa.TabIndex = 44;
@@ -472,7 +435,7 @@
             this.btSua.ForeColor = System.Drawing.Color.White;
             this.btSua.Image = global::DoAn1_10122390.Properties.Resources.Sua;
             this.btSua.ImageSize = new System.Drawing.Size(30, 30);
-            this.btSua.Location = new System.Drawing.Point(205, 212);
+            this.btSua.Location = new System.Drawing.Point(260, 212);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(124, 44);
             this.btSua.TabIndex = 45;
@@ -492,32 +455,12 @@
             this.bttThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttThem.ForeColor = System.Drawing.Color.White;
             this.bttThem.Image = ((System.Drawing.Image)(resources.GetObject("bttThem.Image")));
-            this.bttThem.Location = new System.Drawing.Point(541, 211);
+            this.bttThem.Location = new System.Drawing.Point(672, 211);
             this.bttThem.Name = "bttThem";
             this.bttThem.Size = new System.Drawing.Size(136, 45);
             this.bttThem.TabIndex = 46;
             this.bttThem.Text = "&Thêm";
             this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
-            // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(647, 3);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(178, 161);
-            this.guna2TextBox2.TabIndex = 42;
             // 
             // guna2TextBox1
             // 
@@ -594,7 +537,6 @@
             this.pnbang.ResumeLayout(false);
             this.pnbang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbSoluong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -609,13 +551,10 @@
         private Guna.UI2.WinForms.Guna2TextBox tbGia;
         private Guna.UI2.WinForms.Guna2TextBox tbTensp;
         private Guna.UI2.WinForms.Guna2TextBox tbMasp;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbAnh;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btXoa;
         private Guna.UI2.WinForms.Guna2Button btSua;
         private Guna.UI2.WinForms.Guna2Button bttThem;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;

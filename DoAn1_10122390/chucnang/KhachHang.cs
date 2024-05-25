@@ -84,22 +84,29 @@ namespace DoAn1_10122390
 
         private void btthem_Click(object sender, EventArgs e)
         {
-           
-            if (string.IsNullOrEmpty(tbTen.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
+
+            if (string.IsNullOrEmpty(tbTen.Text) ||
+                string.IsNullOrEmpty(tbDiachi.Text) ||
+                string.IsNullOrEmpty(tbSDT.Text) ||
+                string.IsNullOrEmpty(tbEmail.Text) ||
+                !ValidatePhoneNumber(tbSDT.Text) ||
+                !ValidateEmail(tbEmail.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (!ValidatePhoneNumber(tbSDT.Text))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (string.IsNullOrEmpty(tbTen.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text) || string.IsNullOrEmpty(tbEmail.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!ValidatePhoneNumber(tbSDT.Text))
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!ValidateEmail(tbEmail.Text))
+                {
+                    MessageBox.Show("Email không hợp lệ! Email phải có định dạng @gmail.com.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 return;
             }
 
-            if (!ValidateEmail(tbEmail.Text))
-            {
-                MessageBox.Show("Email không hợp lệ! Email phải có định dạng @gmail.com.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             else
             {
                 int count = dgvkhachhang.Rows.Count;
@@ -152,12 +159,27 @@ namespace DoAn1_10122390
 
         private void btsua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbMa.Text))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             KhachHangDTO kh = new KhachHangDTO();
             kh.MaKH = olodo;
             kh.TenKH = tbTen.Text;
             kh.DiaChi = tbDiachi.Text;
             kh.SDT = tbSDT.Text;
             kh.Email = tbEmail.Text;
+            string currentTen = dgvkhachhang.CurrentRow.Cells[1].Value.ToString();
+            string currentDiaChi = dgvkhachhang.CurrentRow.Cells[2].Value.ToString();
+            string currentSDT = dgvkhachhang.CurrentRow.Cells[3].Value.ToString();
+            string currentEmail = dgvkhachhang.CurrentRow.Cells[4].Value.ToString();
+
+            if (currentTen == tbTen.Text && currentDiaChi == tbDiachi.Text && currentSDT == tbSDT.Text && currentEmail == tbEmail.Text)
+            {
+                MessageBox.Show("Bạn không có thay đổi nào để lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string result = BUS.Suankh(kh);
             if (result == "Sửa thông tin thành công.")
             {
@@ -175,6 +197,12 @@ namespace DoAn1_10122390
 
         private void btxoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbMa.Text))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string maKh = tbMa.Text;
             DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này ra khỏi danh sách khách hàng công ty không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)

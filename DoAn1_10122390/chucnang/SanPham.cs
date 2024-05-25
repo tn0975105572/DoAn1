@@ -22,6 +22,21 @@ namespace DoAn1_10122390
             InitializeComponent();
         }
         SanPhamBUS BUS = new SanPhamBUS();
+        private void Check()
+        {
+            foreach (DataGridViewRow row in dgvSanpham.Rows)
+            {
+                if (row.Cells["Column6"] != null && row.Cells["Column6"].Value != null)
+                {
+                    int quantity = Convert.ToInt32(row.Cells["Column6"].Value);
+                    if (quantity == 0)
+                    {
+                        string productName = row.Cells["Column2"].Value.ToString();
+                        MessageBox.Show($"Sản phẩm '{productName}' đang hết hàng. Hãy nhập thêm sản phẩm ở chức năng nhập kho.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
 
         void loaddgv()
         {
@@ -29,8 +44,10 @@ namespace DoAn1_10122390
             dgvSanpham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
             foreach (DataGridViewColumn column in dgvSanpham.Columns)
             {
-                column.DefaultCellStyle.Font = new Font("Arial", 10); 
+                column.DefaultCellStyle.Font = new Font("Arial", 10);
             }
+
+            Check();
         }
 
         private void LoadDataIntoComboBox() 
@@ -124,14 +141,34 @@ namespace DoAn1_10122390
 
         private void btSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbMasp.Text) ||
+                string.IsNullOrWhiteSpace(tbTensp.Text) ||
+                string.IsNullOrWhiteSpace(tbGia.Text) ||
+                string.IsNullOrWhiteSpace(tbMota.Text) ||
+                string.IsNullOrWhiteSpace(tbMacc.Text) ||
+                string.IsNullOrWhiteSpace(tbSoluong.Text))
+            {
+                MessageBox.Show("Không được bỏ trống các trường.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             SanPhamDTO sp = new SanPhamDTO();
             sp.Masp = tbMasp.Text;
             sp.Tensp = tbTensp.Text;
-
             sp.Gia = tbGia.Text;
             sp.Mota = tbMota.Text;
             sp.Mancc = tbMacc.Text;
             sp.SoLuong = tbSoluong.Text;
+            string currentTensp = dgvSanpham.CurrentRow.Cells["Column2"].Value.ToString();
+            string currentGia = dgvSanpham.CurrentRow.Cells["Column3"].Value.ToString();
+            string currentMota = dgvSanpham.CurrentRow.Cells["Column4"].Value.ToString();
+            string currentMancc = dgvSanpham.CurrentRow.Cells["Column5"].Value.ToString();
+            string currentSoLuong = dgvSanpham.CurrentRow.Cells["Column6"].Value.ToString();
+            if (sp.Tensp == currentTensp && sp.Gia == currentGia && sp.Mota == currentMota && sp.Mancc == currentMancc && sp.SoLuong == currentSoLuong)
+            {
+                MessageBox.Show("Bạn không có thay đổi nào để lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string result = BUS.Suasp(sp);
             if (result == "Sửa thành công")
             {
@@ -148,6 +185,11 @@ namespace DoAn1_10122390
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbMasp.Text))
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string maSp = tbMasp.Text;
             SanPhamDTO sanPhamDTO = new SanPhamDTO();
             sanPhamDTO.Masp = maSp;

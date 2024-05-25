@@ -15,6 +15,7 @@ namespace BUS
     public class DonHangBUS
     {
         private DonHangDAL dh = new DonHangDAL();
+        private KhachHangDAL kh = new KhachHangDAL();
         public string ThemDonHang(DonHangDTO dto)
         {
             dh.ThemDonHang(dto);
@@ -23,6 +24,12 @@ namespace BUS
         public DataTable Hien(DonHangDTO dto)
         {
             return dh.Hien(dto);
+        }
+
+        public DataTable hienKh()
+        {
+            return kh.getData();
+
         }
 
 

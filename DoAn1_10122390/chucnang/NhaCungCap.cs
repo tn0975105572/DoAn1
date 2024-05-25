@@ -152,11 +152,30 @@ namespace DoAn1_10122390
 
         private void btsua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbManhacungcap.Text) || string.IsNullOrEmpty(tbTennhacungcap.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin nhà cung cấp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+          
+            if (!ValidatePhoneNumber(tbSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ! Số điện thoại phải có 10 chữ số và bắt đầu bằng số 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             NhaCungCapDTO ncc = new NhaCungCapDTO();
             ncc.ManhaCC = tbManhacungcap.Text;
             ncc.Tennhacc = tbTennhacungcap.Text;
             ncc.Diachi = tbDiachi.Text;
             ncc.SDT = tbSDT.Text;
+            string currentTen = dgvnhacungcap.CurrentRow.Cells[1].Value.ToString();
+            string currentDiaChi = dgvnhacungcap.CurrentRow.Cells[2].Value.ToString();
+            string currentSDT = dgvnhacungcap.CurrentRow.Cells[3].Value.ToString();
+            if (currentTen == tbTennhacungcap.Text && currentDiaChi == tbDiachi.Text && currentSDT == tbSDT.Text)
+            {
+                MessageBox.Show("Bạn không có thay đổi nào để lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string result = BUS.Suanhacc(ncc);
             if(result == "Sửa thông tin nhà cung cấp thành công.")
             {
@@ -174,6 +193,11 @@ namespace DoAn1_10122390
 
         private void btxoa_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(tbManhacungcap.Text) || string.IsNullOrEmpty(tbTennhacungcap.Text) || string.IsNullOrEmpty(tbDiachi.Text) || string.IsNullOrEmpty(tbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng chọn nhà cung cấp cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string maNCC = tbManhacungcap.Text;
             DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa nha cung cấp này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)

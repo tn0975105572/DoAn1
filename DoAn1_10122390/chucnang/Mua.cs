@@ -42,6 +42,9 @@ namespace DoAn1_10122390
             {
                 column.DefaultCellStyle.Font = new Font("Arial", 10);
             }
+
+            dtNgay.Value = DateTime.Now;
+
         }
 
         public void LoadDataIntoComboBox()
@@ -55,6 +58,12 @@ namespace DoAn1_10122390
             cbbmagiamgia.DataSource = dataTable2;
             cbbmagiamgia.DisplayMember = "MaGiamGia";
             cbbmagiamgia.ValueMember = "MaGiamGia";
+
+            DataTable dataTable3 = BUS2.hienKh();
+            cbbkh.DataSource = dataTable3;
+            cbbkh.DisplayMember = "MaKhachHang";
+            cbbkh.ValueMember = "MaKhachHang";
+
         }
 
         public void MUA_Load(object sender, EventArgs e)
@@ -72,12 +81,20 @@ namespace DoAn1_10122390
         {
             if (dgvSanpham.Columns[e.ColumnIndex].Name == "Column5")
             {
+                int soLuongTrongKho = Convert.ToInt32(dgvSanpham.Rows[e.RowIndex].Cells["Column4"].Value);
+                if (soLuongTrongKho == 0)
+                {
+                    MessageBox.Show("Sản phẩm này đã hết hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 them.Enabled = true;
+                NUDSoluong.Enabled=true;
 
                 dgvSanpham.Columns["Column5"].Visible = false;
-                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells["Column1"].Value.ToString(),
+                dgvGioHang.Rows.Add(dgvSanpham.Rows[e.RowIndex].Cells["Column1"].Value.ToString(), 
                     dgvSanpham.Rows[e.RowIndex].Cells["Column2"].Value.ToString(),
                     dgvSanpham.Rows[e.RowIndex].Cells["Column3"].Value.ToString(), 0);
+
             }
 
             if (e.RowIndex >= 0 && e.RowIndex < dgvSanpham.Rows.Count)
@@ -92,6 +109,7 @@ namespace DoAn1_10122390
         public void guna2Button1_Click(object sender, EventArgs e)
         {
             dgvGioHang.Rows.Clear();
+           
         }
 
 
@@ -128,6 +146,7 @@ namespace DoAn1_10122390
         {
             if (dgvGioHang.Columns[e.ColumnIndex].Name == "Column10")
             {
+               
                 dgvGioHang.Rows.RemoveAt(e.RowIndex);
                 dgvSanpham.Columns["Column5"].Visible = true;
                 them.Enabled = false;
@@ -160,22 +179,21 @@ namespace DoAn1_10122390
             return tongTien;
         }
 
-
-
         public void tbSoluong_ValueChanged(object sender, EventArgs e)
         {
-            int giaTriMoi = (int)NUDSoluong.Value;
+            if (dgvGioHang.CurrentRow != null && dgvGioHang.CurrentRow.Cells["Column9"].Value != null)
+            {
+                int giaTriMoi = (int)NUDSoluong.Value;
 
-            int soLuongHienTai = dgvGioHang.CurrentRow.Cells["Column9"].Value == null
-                ? 0
-                : Convert.ToInt32(dgvGioHang.CurrentRow.Cells["Column9"].Value);
-            if (giaTriMoi > soLuongHienTai)
-            {
-                dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai + 1;
-            }
-            else if (giaTriMoi < soLuongHienTai)
-            {
-                dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai - 1;
+                int soLuongHienTai = Convert.ToInt32(dgvGioHang.CurrentRow.Cells["Column9"].Value);
+                if (giaTriMoi > soLuongHienTai)
+                {
+                    dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai + 1;
+                }
+                else if (giaTriMoi < soLuongHienTai)
+                {
+                    dgvGioHang.CurrentRow.Cells["Column9"].Value = soLuongHienTai - 1;
+                }
             }
         }
 
@@ -200,10 +218,7 @@ namespace DoAn1_10122390
                 dtNgay.Enabled = true;
                 tbhoadon.Enabled = true;
                 cbbmanhanvien.Enabled = true;
-
                 btIn.Enabled = true;
-                btThanhToan.Enabled = true;
-
                 bttaomoi.Enabled = false;
             }
             else
@@ -216,6 +231,12 @@ namespace DoAn1_10122390
 
         public void guna2Button2_Click(object sender, EventArgs e)
         {
+            if (NUDSoluong.Value == 0)
+            {
+                MessageBox.Show("Vui lòng chọn số lượng sản phẩm để mua.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            btThanhToan.Enabled = true;
             them.Enabled = false;
             DonHangDTO dh = new DonHangDTO();
             dgvSanpham.Columns["Column5"].Visible = true;
@@ -227,6 +248,7 @@ namespace DoAn1_10122390
             dh.MaNhanVien = cbbmanhanvien.Text;
             dh.Gia = tbTong.Text;
             dh.NgayDat = dtNgay.Value;
+            dh.MaKhachHang = cbbkh.Text;
             SanPhamDTO sp = new SanPhamDTO();
             int sltrongkho;
             int soluongmua;
@@ -253,6 +275,8 @@ namespace DoAn1_10122390
                 MessageBox.Show("Thông tin sản phẩm vào Giỏ Hàng Thành Công!", "Thông báo", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 dgvGioHang.Rows.Clear();
+                NUDSoluong.Enabled = false;
+                NUDSoluong.Value = 0;
             }
 
             int slmoi = sltrongkho - soluongmua;
@@ -280,8 +304,19 @@ namespace DoAn1_10122390
 
         private void btThanhToan_Click(object sender, EventArgs e)
         {
+           
             Form2 f = new Form2();
             f.Show();
+
+        }
+
+        private void dtNgay_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbmanhanvien_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

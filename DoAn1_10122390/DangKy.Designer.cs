@@ -85,7 +85,7 @@
             // 
             this.tbmk.Animated = true;
             this.tbmk.AutoRoundedCorners = true;
-            this.tbmk.BorderRadius = 16;
+            this.tbmk.BorderRadius = 15;
             this.tbmk.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbmk.DefaultText = "";
             this.tbmk.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -95,14 +95,14 @@
             this.tbmk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbmk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbmk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbmk.Location = new System.Drawing.Point(52, 285);
+            this.tbmk.Location = new System.Drawing.Point(52, 343);
             this.tbmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbmk.Name = "tbmk";
             this.tbmk.PasswordChar = '*';
             this.tbmk.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbmk.PlaceholderText = "Password";
             this.tbmk.SelectedText = "";
-            this.tbmk.Size = new System.Drawing.Size(264, 35);
+            this.tbmk.Size = new System.Drawing.Size(264, 53);
             this.tbmk.TabIndex = 61;
             this.tbmk.TextChanged += new System.EventHandler(this.tbmk_TextChanged);
             // 
@@ -117,7 +117,7 @@
             this.cbdieukhoan.BackColor = System.Drawing.Color.Transparent;
             this.cbdieukhoan.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbdieukhoan.ForeColor = System.Drawing.Color.Black;
-            this.cbdieukhoan.Location = new System.Drawing.Point(12, 390);
+            this.cbdieukhoan.Location = new System.Drawing.Point(12, 483);
             this.cbdieukhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbdieukhoan.Name = "cbdieukhoan";
             this.cbdieukhoan.Size = new System.Drawing.Size(271, 38);
@@ -160,10 +160,11 @@
             // llb2
             // 
             this.llb2.AutoSize = true;
+            this.llb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb2.LinkColor = System.Drawing.Color.Black;
-            this.llb2.Location = new System.Drawing.Point(119, 521);
+            this.llb2.Location = new System.Drawing.Point(119, 603);
             this.llb2.Name = "llb2";
-            this.llb2.Size = new System.Drawing.Size(42, 16);
+            this.llb2.Size = new System.Drawing.Size(63, 25);
             this.llb2.TabIndex = 68;
             this.llb2.TabStop = true;
             this.llb2.Text = "Close";
@@ -181,10 +182,10 @@
             this.llbdangky.FillColor = System.Drawing.Color.Red;
             this.llbdangky.Font = new System.Drawing.Font("Segoe UI Black", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.llbdangky.ForeColor = System.Drawing.Color.White;
-            this.llbdangky.Location = new System.Drawing.Point(52, 460);
+            this.llbdangky.Location = new System.Drawing.Point(52, 537);
             this.llbdangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.llbdangky.Name = "llbdangky";
-            this.llbdangky.Size = new System.Drawing.Size(174, 50);
+            this.llbdangky.Size = new System.Drawing.Size(211, 64);
             this.llbdangky.TabIndex = 66;
             this.llbdangky.Text = "Đăng ký!";
             this.llbdangky.Click += new System.EventHandler(this.llbdangky_Click);
@@ -194,7 +195,7 @@
             this.llb1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.llb1.AllowDrop = true;
             this.llb1.AutoSize = true;
-            this.llb1.Location = new System.Drawing.Point(119, 410);
+            this.llb1.Location = new System.Drawing.Point(121, 481);
             this.llb1.Name = "llb1";
             this.llb1.Size = new System.Drawing.Size(163, 16);
             this.llb1.TabIndex = 64;
@@ -213,14 +214,14 @@
             this.tbxnmk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxnmk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbxnmk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxnmk.Location = new System.Drawing.Point(52, 326);
+            this.tbxnmk.Location = new System.Drawing.Point(53, 415);
             this.tbxnmk.Margin = new System.Windows.Forms.Padding(4);
             this.tbxnmk.Name = "tbxnmk";
             this.tbxnmk.PasswordChar = '\0';
             this.tbxnmk.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbxnmk.PlaceholderText = "Enter the password";
             this.tbxnmk.SelectedText = "";
-            this.tbxnmk.Size = new System.Drawing.Size(264, 38);
+            this.tbxnmk.Size = new System.Drawing.Size(263, 53);
             this.tbxnmk.TabIndex = 63;
             this.tbxnmk.TextChanged += new System.EventHandler(this.tbxnmk_TextChanged);
             // 
@@ -236,14 +237,14 @@
             this.tbsdt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbsdt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbsdt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbsdt.Location = new System.Drawing.Point(52, 238);
+            this.tbsdt.Location = new System.Drawing.Point(52, 282);
             this.tbsdt.Margin = new System.Windows.Forms.Padding(4);
             this.tbsdt.Name = "tbsdt";
             this.tbsdt.PasswordChar = '\0';
             this.tbsdt.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbsdt.PlaceholderText = "phone number";
             this.tbsdt.SelectedText = "";
-            this.tbsdt.Size = new System.Drawing.Size(264, 34);
+            this.tbsdt.Size = new System.Drawing.Size(264, 53);
             this.tbsdt.TabIndex = 62;
             this.tbsdt.TextChanged += new System.EventHandler(this.tbsdt_TextChanged);
             // 
@@ -259,6 +260,7 @@
             this.tbtendangnhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbtendangnhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbtendangnhap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbtendangnhap.ForeColor = System.Drawing.Color.Black;
             this.tbtendangnhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbtendangnhap.Location = new System.Drawing.Point(52, 142);
             this.tbtendangnhap.Margin = new System.Windows.Forms.Padding(4);
@@ -267,7 +269,7 @@
             this.tbtendangnhap.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbtendangnhap.PlaceholderText = "Login";
             this.tbtendangnhap.SelectedText = "";
-            this.tbtendangnhap.Size = new System.Drawing.Size(264, 40);
+            this.tbtendangnhap.Size = new System.Drawing.Size(264, 53);
             this.tbtendangnhap.TabIndex = 60;
             this.tbtendangnhap.TextChanged += new System.EventHandler(this.tbtendangnhap_TextChanged);
             // 
@@ -283,14 +285,14 @@
             this.tbemail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbemail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbemail.Location = new System.Drawing.Point(52, 190);
+            this.tbemail.Location = new System.Drawing.Point(52, 211);
             this.tbemail.Margin = new System.Windows.Forms.Padding(4);
             this.tbemail.Name = "tbemail";
             this.tbemail.PasswordChar = '\0';
             this.tbemail.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbemail.PlaceholderText = "EMAIL";
             this.tbemail.SelectedText = "";
-            this.tbemail.Size = new System.Drawing.Size(264, 45);
+            this.tbemail.Size = new System.Drawing.Size(264, 54);
             this.tbemail.TabIndex = 59;
             this.tbemail.TextChanged += new System.EventHandler(this.tbemail_TextChanged);
             // 
@@ -299,7 +301,7 @@
             this.linkLabel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.linkLabel1.AllowDrop = true;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(140, 394);
+            this.linkLabel1.Location = new System.Drawing.Point(121, 483);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(163, 16);
             this.linkLabel1.TabIndex = 75;
@@ -323,7 +325,7 @@
             // btp6
             // 
             this.btp6.Image = global::DoAn1_10122390.Properties.Resources.khoa1;
-            this.btp6.Location = new System.Drawing.Point(4, 328);
+            this.btp6.Location = new System.Drawing.Point(12, 423);
             this.btp6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btp6.Name = "btp6";
             this.btp6.Size = new System.Drawing.Size(42, 37);
@@ -334,7 +336,7 @@
             // ptb5
             // 
             this.ptb5.Image = global::DoAn1_10122390.Properties.Resources.khoa;
-            this.ptb5.Location = new System.Drawing.Point(4, 285);
+            this.ptb5.Location = new System.Drawing.Point(4, 352);
             this.ptb5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb5.Name = "ptb5";
             this.ptb5.Size = new System.Drawing.Size(42, 35);
@@ -345,7 +347,7 @@
             // ptb4
             // 
             this.ptb4.Image = global::DoAn1_10122390.Properties.Resources.phone;
-            this.ptb4.Location = new System.Drawing.Point(4, 243);
+            this.ptb4.Location = new System.Drawing.Point(4, 291);
             this.ptb4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb4.Name = "ptb4";
             this.ptb4.Size = new System.Drawing.Size(42, 34);
@@ -356,7 +358,7 @@
             // ptb3
             // 
             this.ptb3.Image = global::DoAn1_10122390.Properties.Resources._10;
-            this.ptb3.Location = new System.Drawing.Point(4, 190);
+            this.ptb3.Location = new System.Drawing.Point(4, 221);
             this.ptb3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb3.Name = "ptb3";
             this.ptb3.Size = new System.Drawing.Size(42, 34);
@@ -367,7 +369,7 @@
             // ptb2
             // 
             this.ptb2.Image = global::DoAn1_10122390.Properties.Resources.người;
-            this.ptb2.Location = new System.Drawing.Point(4, 142);
+            this.ptb2.Location = new System.Drawing.Point(4, 148);
             this.ptb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb2.Name = "ptb2";
             this.ptb2.Size = new System.Drawing.Size(42, 40);
@@ -381,7 +383,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(322, -2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(346, 565);
+            this.pictureBox1.Size = new System.Drawing.Size(411, 675);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
@@ -402,7 +404,7 @@
             this.xoatat.BackColor = System.Drawing.Color.White;
             this.xoatat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.xoatat.Image = global::DoAn1_10122390.Properties.Resources.close;
-            this.xoatat.Location = new System.Drawing.Point(278, 151);
+            this.xoatat.Location = new System.Drawing.Point(278, 157);
             this.xoatat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xoatat.Name = "xoatat";
             this.xoatat.Size = new System.Drawing.Size(27, 22);
@@ -416,7 +418,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = global::DoAn1_10122390.Properties.Resources.close;
-            this.pictureBox2.Location = new System.Drawing.Point(278, 202);
+            this.pictureBox2.Location = new System.Drawing.Point(278, 227);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 22);
@@ -429,7 +431,7 @@
             // 
             this.pshow.BackColor = System.Drawing.Color.White;
             this.pshow.Image = ((System.Drawing.Image)(resources.GetObject("pshow.Image")));
-            this.pshow.Location = new System.Drawing.Point(268, 294);
+            this.pshow.Location = new System.Drawing.Point(278, 360);
             this.pshow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pshow.Name = "pshow";
             this.pshow.Size = new System.Drawing.Size(27, 18);
@@ -442,7 +444,7 @@
             // 
             this.Phide.BackColor = System.Drawing.Color.White;
             this.Phide.Image = ((System.Drawing.Image)(resources.GetObject("Phide.Image")));
-            this.Phide.Location = new System.Drawing.Point(236, 294);
+            this.Phide.Location = new System.Drawing.Point(278, 360);
             this.Phide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Phide.Name = "Phide";
             this.Phide.Size = new System.Drawing.Size(27, 18);
@@ -456,7 +458,7 @@
             this.xoatat2.BackColor = System.Drawing.Color.White;
             this.xoatat2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.xoatat2.Image = global::DoAn1_10122390.Properties.Resources.close;
-            this.xoatat2.Location = new System.Drawing.Point(278, 335);
+            this.xoatat2.Location = new System.Drawing.Point(278, 430);
             this.xoatat2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xoatat2.Name = "xoatat2";
             this.xoatat2.Size = new System.Drawing.Size(27, 22);
@@ -470,7 +472,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Image = global::DoAn1_10122390.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(279, 243);
+            this.pictureBox3.Location = new System.Drawing.Point(279, 297);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(26, 22);
@@ -490,7 +492,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 569);
+            this.ClientSize = new System.Drawing.Size(732, 671);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.xoatat2);
             this.Controls.Add(this.Phide);
@@ -516,6 +518,7 @@
             this.Controls.Add(this.tbtendangnhap);
             this.Controls.Add(this.tbemail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DangKy";
             this.Text = "DangKy";

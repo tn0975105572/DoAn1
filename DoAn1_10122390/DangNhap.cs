@@ -28,9 +28,9 @@ namespace DoAn1_10122390
         public DangNhap()
         {
             InitializeComponent();
-            
+
         }
-       
+
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -44,9 +44,15 @@ namespace DoAn1_10122390
 
             base.WndProc(ref m);
         }
+
+
         public void DangNhap_Load(object sender, EventArgs e)
         {
-          
+            this.btdangnhap.KeyDown += new KeyEventHandler(this.DangNhap_KeyDown);
+            toolTip1.SetToolTip(this.btdangnhap, "Click or Nhấn Enter để đăng nhập");
+            toolTip1.SetToolTip(this.linkLabel1, "Click or Nhấn Ctrl + N để đăng ký");
+            toolTip1.SetToolTip(this.llb1, "Click or Nhấn Ctrl + Q để quên mật khẩu");
+            toolTip1.SetToolTip(this.ptb2, "Click or Nhấn Alt+ f4 để tắt phần mềm");
         }
 
         public void btdangnhap_Click(object sender, EventArgs e)
@@ -127,10 +133,6 @@ namespace DoAn1_10122390
             tbmk.Text = string.Empty;
         }
 
-        private void tbtendangnhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -155,9 +157,24 @@ namespace DoAn1_10122390
 
         }
 
-        private void tbmk_TextChanged(object sender, EventArgs e)
+        
+        private void DangNhap_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                btdangnhap_Click(sender, e);
+                e.Handled = true;
+            }
+            if (e.Control && e.KeyCode == Keys.N)
+            {
+                linkLabel1_LinkClicked(this, null);
+                e.Handled = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.Q)
+            {
+                llb1_LinkClicked(this, null);
+                e.Handled = true;
+            }
         }
 
 

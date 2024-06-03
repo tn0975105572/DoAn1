@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.llb1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +57,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 100;
             // 
             // linkLabel1
             // 
@@ -121,7 +124,6 @@
             this.tbmk.SelectedText = "";
             this.tbmk.Size = new System.Drawing.Size(269, 57);
             this.tbmk.TabIndex = 48;
-            this.tbmk.TextChanged += new System.EventHandler(this.tbmk_TextChanged);
             // 
             // tbtendangnhap
             // 
@@ -146,7 +148,6 @@
             this.tbtendangnhap.SelectedText = "";
             this.tbtendangnhap.Size = new System.Drawing.Size(269, 60);
             this.tbtendangnhap.TabIndex = 44;
-            this.tbtendangnhap.TextChanged += new System.EventHandler(this.tbtendangnhap_TextChanged);
             // 
             // btdangnhap
             // 
@@ -329,10 +330,13 @@
             this.Controls.Add(this.lbmk);
             this.Controls.Add(this.lbtendangnhap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DangNhap";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.DangNhap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DangNhap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.xoatat2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xoatat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thunho)).EndInit();
@@ -349,7 +353,6 @@
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox xoatat2;
         private System.Windows.Forms.PictureBox xoatat;

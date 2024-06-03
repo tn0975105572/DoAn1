@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadDangNhap));
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +39,10 @@
             // 
             // guna2ProgressBar1
             // 
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(26, 95);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(23, 76);
+            this.guna2ProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(797, 30);
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(708, 24);
             this.guna2ProgressBar1.TabIndex = 0;
             this.guna2ProgressBar1.Text = "guna2ProgressBar1";
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -49,9 +51,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(33, 72);
+            this.label3.Location = new System.Drawing.Point(29, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Đang tải dữ liệu";
             // 
@@ -59,9 +61,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(395, 72);
+            this.label2.Location = new System.Drawing.Point(351, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "label2";
             // 
@@ -70,9 +72,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(295, 9);
+            this.label1.Location = new System.Drawing.Point(262, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 58);
+            this.label1.Size = new System.Drawing.Size(211, 50);
             this.label1.TabIndex = 6;
             this.label1.Text = "Loading...";
             // 
@@ -82,15 +84,17 @@
             // 
             // LoadDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(859, 152);
+            this.ClientSize = new System.Drawing.Size(764, 122);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2ProgressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoadDangNhap";
             this.Text = "LoadDangNhap";
             this.Load += new System.EventHandler(this.LoadDangNhap_Load);

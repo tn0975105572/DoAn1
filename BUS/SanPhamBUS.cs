@@ -64,9 +64,9 @@ namespace BUS
             return "Xóa thất bại";
         }
 
-        public DataTable Timso(SanPhamDTO tk)
+        public DataTable Timsp(string keyword)
         {
-            return sp.TimKiemSP(tk);
+            return sp.TimKiemSP(keyword);
         }
         public string Suasoluong(int olodo, int olodo2)
         {

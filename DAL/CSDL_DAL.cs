@@ -53,7 +53,19 @@ namespace DAL
             return dttb;
 
         }
-
+        public DataTable getData(string sql, SqlParameter[] parameters)
+        {
+            ketnoi();
+            dtadt = new SqlDataAdapter(sql, kn);
+            foreach (var param in parameters)
+            {
+                dtadt.SelectCommand.Parameters.Add(param);
+            }
+            dttb = new DataTable();
+            dtadt.Fill(dttb);
+            ngatketnoi();
+            return dttb;
+        }
 
         public int LayGiaTri(string sql)
         {
@@ -73,6 +85,21 @@ namespace DAL
             ngatketnoi();
             return i;
         }
-       
+        
+        public object ExecuteScalar(string sql, SqlParameter[] parameters)
+        {
+            ketnoi();
+            using (SqlCommand command = new SqlCommand(sql, kn))
+            {
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+                object result = command.ExecuteScalar();
+                ngatketnoi();
+                return result;
+            }
+        }
+
     }
 }

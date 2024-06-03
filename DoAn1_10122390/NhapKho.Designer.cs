@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapKho));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -76,7 +77,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(842, 511);
             this.guna2Panel1.TabIndex = 0;
-        
+            // 
             // guna2Button3
             // 
             this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -97,6 +98,7 @@
             // ptb2
             // 
             this.ptb2.AccessibleDescription = "";
+            this.ptb2.BackColor = System.Drawing.Color.DarkCyan;
             this.ptb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptb2.Image = global::DoAn1_10122390.Properties.Resources._9;
             this.ptb2.Location = new System.Drawing.Point(786, 11);
@@ -166,7 +168,6 @@
             this.tbSoluomg.SelectedText = "";
             this.tbSoluomg.Size = new System.Drawing.Size(224, 47);
             this.tbSoluomg.TabIndex = 3;
-            this.tbSoluomg.TextChanged += new System.EventHandler(this.tbSoluomg_TextChanged);
             // 
             // tbMa
             // 
@@ -296,6 +297,7 @@
             this.ClientSize = new System.Drawing.Size(841, 511);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NhapKho";
             this.Text = "NhapKho";
             this.Load += new System.EventHandler(this.NhapKho_Load);

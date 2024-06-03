@@ -303,6 +303,7 @@
             this.tbMota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbMota.Name = "tbMota";
             this.tbMota.PasswordChar = '\0';
+            this.tbMota.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbMota.PlaceholderText = "Mô tả sản phẩm";
             this.tbMota.SelectedText = "";
             this.tbMota.Size = new System.Drawing.Size(441, 40);
@@ -326,6 +327,7 @@
             this.tbGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbGia.Name = "tbGia";
             this.tbGia.PasswordChar = '\0';
+            this.tbGia.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbGia.PlaceholderText = "Nhập giá ";
             this.tbGia.SelectedText = "";
             this.tbGia.Size = new System.Drawing.Size(229, 40);
@@ -350,6 +352,7 @@
             this.tbTensp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTensp.Name = "tbTensp";
             this.tbTensp.PasswordChar = '\0';
+            this.tbTensp.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbTensp.PlaceholderText = "Nhập tên sản phẩm";
             this.tbTensp.SelectedText = "";
             this.tbTensp.Size = new System.Drawing.Size(287, 40);
@@ -374,6 +377,7 @@
             this.tbMasp.Margin = new System.Windows.Forms.Padding(4);
             this.tbMasp.Name = "tbMasp";
             this.tbMasp.PasswordChar = '\0';
+            this.tbMasp.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbMasp.PlaceholderText = "Nhập mã sản phẩm";
             this.tbMasp.SelectedText = "";
             this.tbMasp.Size = new System.Drawing.Size(282, 44);
@@ -480,6 +484,7 @@
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.guna2TextBox1.PlaceholderText = "Nhập từ khóa tìm kiếm ";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(291, 45);
@@ -502,6 +507,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(138, 45);
             this.guna2Button4.TabIndex = 61;
             this.guna2Button4.Text = "&Search";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button3
             // 

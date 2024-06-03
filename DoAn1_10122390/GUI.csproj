@@ -319,7 +319,7 @@
     <EmbeddedResource Include="chucnang\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".editorconfig" />
+    <None Include="Resources\.editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

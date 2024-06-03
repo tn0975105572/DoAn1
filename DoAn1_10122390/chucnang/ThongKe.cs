@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+
 namespace DoAn1_10122390
 {
     public partial class ThongKe : UserControl
@@ -27,82 +28,81 @@ namespace DoAn1_10122390
         {
             InitializeComponent();
         }
-       
-        SqlConnection connection = new SqlConnection("Data Source=DUYTUAN;Initial Catalog=olodo;Integrated Security=True");
-        private ThongKeBUS BUS = new ThongKeBUS();
-      
+
+        private readonly ThongKeBUS BUS = new ThongKeBUS();
+
         private void ThongKe_Load(object sender, EventArgs e)
         {
 
             label1.Text = BUS.getMaxMaKhachHang().ToString();
             label2.Text = BUS.getMaxMaNhanVien().ToString();
             label3.Text = BUS.getMaxMaSanPham().ToString();
+            lb.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular);
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void bttThem_Click(object sender, EventArgs e)
         {
             if (dateTimePicker1.Value.Date > dateTimePicker2.Value.Date)
             {
-                errorProvider1.SetError(dateTimePicker1, "Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.");
+                MessageBox.Show("Thời Gian Bạn Chọn Bị Lỗi Vì Thời Gian Bắt Đầu Luôn Nhỏ Hơn Thời Gian Kết Thúc",
+                    "Thông Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else
-            {
-                errorProvider1.SetError(dateTimePicker1, null);
-            }
+
+            DateTime startDate = dateTimePicker1.Value.Date;
+            DateTime endDate = dateTimePicker2.Value.Date;
+
+            object result = BUS.GetTongDoanhThu(startDate, endDate);
+            lb.Text = result != DBNull.Value
+                ? $"Tổng doanh thu {Convert.ToDouble(result):N0} VNĐ"
+                : "Không có dữ liệu thời gian này.";
+
+            UpdateChart(startDate, endDate);
+        }
+
+
+
+
+        private void UpdateChart(DateTime startDate, DateTime endDate)
+        {
             try
             {
-                DataTable dt = new DataTable();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT TOP 5 SP.TenSanPham AS ProductName, SUM(CTDH.SoLuong) AS QtySold " +
-                                                                "FROM ChiTietDonHang CTDH " +
-                                                                "JOIN SanPham SP ON CTDH.MaSanPham = SP.MaSanPham " +
-                                                                "JOIN DonHang DH ON CTDH.MaDonHang = DH.MaDonHang " +
-                                                                "WHERE DH.NgayDat >= @StartDate AND DH.NgayDat <= @EndDate " +
-                                                                "GROUP BY SP.TenSanPham " +
-                                                                "ORDER BY SUM(CTDH.SoLuong) DESC", connection);
-
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@StartDate", dateTimePicker1.Value.Date);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@EndDate", dateTimePicker2.Value.Date);
-
-                connection.Open();
-                dataAdapter.Fill(dt);
-                connection.Close();
+                DataTable dt = BUS.GetTopSanPhamBanChay(startDate, endDate);
 
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show($"Không có dữ liệu cho khoảng thời gian từ {dateTimePicker1.Value.ToString("dd-MM-yyyy")} đến {dateTimePicker2.Value.ToString("dd-MM-yyyy")}");
+                    BieuDoCot.Series.Clear();
+                    MessageBox.Show(
+                        $"Không có dữ liệu cho khoảng thời gian từ {startDate:dd-MM-yyyy} đến {endDate:dd-MM-yyyy}");
                     return;
                 }
 
-                // Kiểm tra xem loạt dữ liệu đã tồn tại chưa
-                if (BieuDoCot.Series.IndexOf("ProductName") != -1)
+                // Check if the series already exists and remove it if it does
+                if (BieuDoCot.Series.IndexOf("Top 5 Sản Phẩm Bán Chạy") != -1)
                 {
-                    // Nếu loạt dữ liệu đã tồn tại, xóa nó đi
-                    BieuDoCot.Series.Remove(BieuDoCot.Series["ProductName"]);
+                    BieuDoCot.Series.Remove(BieuDoCot.Series["Top 5 Sản Phẩm Bán Chạy"]);
                 }
 
-              
-                Series series = new Series("Top 5 Sản Phẩm Bán Chạy");
-                BieuDoCot.Series.Add(series);
+                Series series = new Series("Top 5 Sản Phẩm Bán Chạy")
+                {
+                    ChartType = SeriesChartType.Column,
+                    IsValueShownAsLabel = true
+                };
 
+                BieuDoCot.Series.Add(series);
                 BieuDoCot.ChartAreas["ChartArea1"].AxisX.Title = "Tên Sản Phẩm";
                 BieuDoCot.ChartAreas["ChartArea1"].AxisY.Title = "Số lượng đã bán";
 
-                // Thêm dữ liệu vào loạt dữ liệu mới
-                for (int i = 0; i < dt.Rows.Count; i++)
+                foreach (DataRow row in dt.Rows)
                 {
-                    string productName = dt.Rows[i]["ProductName"].ToString();
-                    int qtySold = Convert.ToInt32(dt.Rows[i]["QtySold"]);
+                    string productName = row["ProductName"].ToString();
+                    int qtySold = Convert.ToInt32(row["QtySold"]);
                     series.Points.AddXY(productName, qtySold);
                 }
-
-                series.IsValueShownAsLabel = true; // Hiển thị giá trị trên biểu đồ
             }
             catch (Exception ex)
             {
@@ -110,4 +110,5 @@ namespace DoAn1_10122390
             }
         }
     }
+    
 }

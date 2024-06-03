@@ -49,8 +49,8 @@ namespace DAL
         public bool Themsp(SanPhamDTO sp)
         {
             int maSanPhamMoi = LayMaSanPhamTiepTheo();
-            string sql = string.Format("INSERT INTO SanPham (MaSanPham, TenSanPham, Gia, MoTa, MaNhaCungCap, SoLuong, HinhAnh) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
-                maSanPhamMoi, sp.Tensp, sp.Gia, sp.Mota, sp.Mancc, sp.SoLuong, sp.Hinhanh);
+            string sql = string.Format("INSERT INTO SanPham (MaSanPham, TenSanPham, Gia, MoTa, MaNhaCungCap, SoLuong) VALUES ('{0}', N'{1}', '{2}', N'{3}', '{4}', '{5}')",
+                maSanPhamMoi, sp.Tensp, sp.Gia, sp.Mota, sp.Mancc, sp.SoLuong);
             csdl.chaycodesql(sql);
             return true;
         }
@@ -58,7 +58,7 @@ namespace DAL
 
         public bool Suasp(SanPhamDTO sp)
         {
-            string sql = string.Format("Update SanPham Set TenSanPham = '{0}', Gia = '{1}', MoTa = '{2}', MaNhaCungCap = '{3}', SoLuong = '{4}' Where MaSanPham = '{5}'", sp.Tensp, sp.Gia, sp.Mota, sp.Mancc, sp.SoLuong, sp.Masp);
+            string sql = string.Format("Update SanPham Set TenSanPham = N'{0}', Gia = '{1}', MoTa = N'{2}', MaNhaCungCap = '{3}', SoLuong = '{4}' Where MaSanPham = '{5}'", sp.Tensp, sp.Gia, sp.Mota, sp.Mancc, sp.SoLuong, sp.Masp);
             csdl.chaycodesql(sql);
             return true;
         }
@@ -70,9 +70,9 @@ namespace DAL
             return true;
         }
 
-        public DataTable TimKiemSP(SanPhamDTO sp)
+        public DataTable TimKiemSP(string keyword)
         {
-            string sql = string.Format("Select * from SanPham Where TenSanPham like '%{0}%'", sp.Tensp);
+            string sql = string.Format("Select * from SanPham Where MaSanPham like '%{0}%'",  keyword);
             return csdl.getData(sql);
         }
         public bool Suasoluong(int olodo, int olodo1)

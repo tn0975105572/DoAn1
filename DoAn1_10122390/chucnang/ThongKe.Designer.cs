@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.paneldulieu = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb = new System.Windows.Forms.Label();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -82,7 +83,7 @@
             this.guna2CustomGradientPanel1.ForeColor = System.Drawing.Color.White;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(14, 13);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(855, 581);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(855, 575);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // paneldulieu
@@ -90,16 +91,26 @@
             this.paneldulieu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
             this.paneldulieu.BorderRadius = 20;
             this.paneldulieu.BorderThickness = 2;
+            this.paneldulieu.Controls.Add(this.lb);
             this.paneldulieu.Controls.Add(this.guna2HtmlLabel4);
             this.paneldulieu.Controls.Add(this.guna2HtmlLabel5);
             this.paneldulieu.Controls.Add(this.dateTimePicker1);
             this.paneldulieu.Controls.Add(this.bttThem);
             this.paneldulieu.Controls.Add(this.dateTimePicker2);
             this.paneldulieu.Controls.Add(this.guna2HtmlLabel3);
-            this.paneldulieu.Location = new System.Drawing.Point(572, 156);
+            this.paneldulieu.Location = new System.Drawing.Point(568, 156);
             this.paneldulieu.Name = "paneldulieu";
-            this.paneldulieu.Size = new System.Drawing.Size(266, 397);
+            this.paneldulieu.Size = new System.Drawing.Size(280, 397);
             this.paneldulieu.TabIndex = 16;
+            // 
+            // lb
+            // 
+            this.lb.AutoSize = true;
+            this.lb.ForeColor = System.Drawing.Color.Black;
+            this.lb.Location = new System.Drawing.Point(10, 275);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(0, 16);
+            this.lb.TabIndex = 52;
             // 
             // guna2HtmlLabel4
             // 
@@ -204,16 +215,16 @@
             // 
             // BieuDoCot
             // 
-            chartArea1.Name = "ChartArea1";
-            this.BieuDoCot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.BieuDoCot.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.BieuDoCot.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.BieuDoCot.Legends.Add(legend2);
             this.BieuDoCot.Location = new System.Drawing.Point(4, 44);
             this.BieuDoCot.Name = "BieuDoCot";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.BieuDoCot.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.BieuDoCot.Series.Add(series2);
             this.BieuDoCot.Size = new System.Drawing.Size(524, 336);
             this.BieuDoCot.TabIndex = 0;
             this.BieuDoCot.Text = "chart1";
@@ -239,7 +250,6 @@
             this.label3.Size = new System.Drawing.Size(144, 51);
             this.label3.TabIndex = 6;
             this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // guna2CirclePictureBox3
             // 
@@ -411,5 +421,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lb;
     }
 }

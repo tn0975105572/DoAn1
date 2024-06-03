@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChamCong));
             this.label2 = new System.Windows.Forms.Label();
             this.dtpngay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btxoa = new Guna.UI2.WinForms.Guna2Button();
@@ -129,6 +130,7 @@
             this.dgvchamcong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvchamcong.Location = new System.Drawing.Point(12, 177);
             this.dgvchamcong.Name = "dgvchamcong";
+            this.dgvchamcong.ReadOnly = true;
             this.dgvchamcong.RowHeadersVisible = false;
             this.dgvchamcong.RowHeadersWidth = 51;
             this.dgvchamcong.RowTemplate.Height = 24;
@@ -147,7 +149,7 @@
             this.dgvchamcong.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvchamcong.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvchamcong.ThemeStyle.HeaderStyle.Height = 18;
-            this.dgvchamcong.ThemeStyle.ReadOnly = false;
+            this.dgvchamcong.ThemeStyle.ReadOnly = true;
             this.dgvchamcong.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvchamcong.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvchamcong.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,9 +301,10 @@
             this.btthem.ImageSize = new System.Drawing.Size(30, 30);
             this.btthem.Location = new System.Drawing.Point(528, 101);
             this.btthem.Name = "btthem";
-            this.btthem.Size = new System.Drawing.Size(167, 56);
+            this.btthem.Size = new System.Drawing.Size(150, 56);
             this.btthem.TabIndex = 4;
             this.btthem.Text = "&Thêm";
+            this.btthem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btthem.Click += new System.EventHandler(this.btthem_Click);
             // 
             // guna2BorderlessForm1
@@ -345,6 +348,7 @@
             this.Controls.Add(this.dtpngay);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChamCong";
             this.Text = "ChamCong";
             this.Load += new System.EventHandler(this.ChamCong_Load);

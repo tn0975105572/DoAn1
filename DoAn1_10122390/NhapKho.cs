@@ -41,7 +41,19 @@ namespace DoAn1_10122390
            
 
         }
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
 
+            base.WndProc(ref m);
+        }
         private void NhapKho_Load(object sender, EventArgs e)
         {
             loaddgv();
@@ -49,11 +61,11 @@ namespace DoAn1_10122390
 
         private void dgvSanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>=0)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvSanpham.Rows.Count)
             {
                 int i = e.RowIndex;
                 tbMa.Text = dgvSanpham[0, i].Value.ToString();
-                tbSoluomg.Text = dgvSanpham[6, i].Value.ToString();
+                //tbSoluomg.Text = dgvSanpham[6, i].Value.ToString();
                 soluonghientai = Convert.ToInt32(dgvSanpham[5, i].Value.ToString());
                 tensp = dgvSanpham[2, i].Value.ToString();
             }
@@ -68,7 +80,7 @@ namespace DoAn1_10122390
         {
             SanPhamDTO sp = new SanPhamDTO();
             int olodo3 = Convert.ToInt32(soluonghientai + Convert.ToInt32(tbSoluomg.Text));
-            string result = this.BUS.Suasoluong(Convert.ToInt32(tbMa.Text),  olodo3);
+            string result = this.BUS.Suasoluong(Convert.ToInt32(tbMa.Text), olodo3);
             if (string.IsNullOrWhiteSpace(tbSoluomg.Text))
             {
                 MessageBox.Show("Vui lòng nhập số lượng sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,10 +142,6 @@ namespace DoAn1_10122390
             }
         }
 
-        private void tbSoluomg_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
     

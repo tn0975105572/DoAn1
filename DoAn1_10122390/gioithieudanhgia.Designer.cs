@@ -48,30 +48,30 @@
             // lb4
             // 
             this.lb4.AutoSize = true;
-            this.lb4.Location = new System.Drawing.Point(173, 190);
+            this.lb4.Location = new System.Drawing.Point(154, 152);
             this.lb4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb4.Name = "lb4";
-            this.lb4.Size = new System.Drawing.Size(137, 20);
+            this.lb4.Size = new System.Drawing.Size(112, 16);
             this.lb4.TabIndex = 21;
             this.lb4.Text = "Mã lớp: 12522W.1";
             // 
             // lb3
             // 
             this.lb3.AutoSize = true;
-            this.lb3.Location = new System.Drawing.Point(173, 138);
+            this.lb3.Location = new System.Drawing.Point(154, 110);
             this.lb3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb3.Name = "lb3";
-            this.lb3.Size = new System.Drawing.Size(208, 20);
+            this.lb3.Size = new System.Drawing.Size(173, 16);
             this.lb3.TabIndex = 20;
             this.lb3.Text = "Chủ nhân:Nguyễn Duy Tuấn";
             // 
             // lb2
             // 
             this.lb2.AutoSize = true;
-            this.lb2.Location = new System.Drawing.Point(173, 91);
+            this.lb2.Location = new System.Drawing.Point(154, 73);
             this.lb2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(134, 20);
+            this.lb2.Size = new System.Drawing.Size(109, 16);
             this.lb2.TabIndex = 19;
             this.lb2.Text = "Môn học: Đồ án 1";
             // 
@@ -79,20 +79,20 @@
             // 
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.Location = new System.Drawing.Point(44, 50);
+            this.lb1.Location = new System.Drawing.Point(39, 40);
             this.lb1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(546, 26);
+            this.lb1.Size = new System.Drawing.Size(479, 24);
             this.lb1.TabIndex = 18;
             this.lb1.Text = "Đồ án 1:quản lý cửa hàng vi mạch và linh kiện IOT\r\n";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DoAn1_10122390.Properties.Resources.icons8_youtube_48;
-            this.pictureBox1.Location = new System.Drawing.Point(415, 226);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(369, 181);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -101,10 +101,10 @@
             // pbemail
             // 
             this.pbemail.Image = global::DoAn1_10122390.Properties.Resources.icons8_gmail_48;
-            this.pbemail.Location = new System.Drawing.Point(268, 226);
-            this.pbemail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbemail.Location = new System.Drawing.Point(238, 181);
+            this.pbemail.Margin = new System.Windows.Forms.Padding(4);
             this.pbemail.Name = "pbemail";
-            this.pbemail.Size = new System.Drawing.Size(79, 74);
+            this.pbemail.Size = new System.Drawing.Size(70, 59);
             this.pbemail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbemail.TabIndex = 24;
             this.pbemail.TabStop = false;
@@ -113,10 +113,10 @@
             // pbfb
             // 
             this.pbfb.Image = global::DoAn1_10122390.Properties.Resources.icons8_facebook_48;
-            this.pbfb.Location = new System.Drawing.Point(83, 226);
-            this.pbfb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbfb.Location = new System.Drawing.Point(74, 181);
+            this.pbfb.Margin = new System.Windows.Forms.Padding(4);
             this.pbfb.Name = "pbfb";
-            this.pbfb.Size = new System.Drawing.Size(76, 74);
+            this.pbfb.Size = new System.Drawing.Size(68, 59);
             this.pbfb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbfb.TabIndex = 23;
             this.pbfb.TabStop = false;
@@ -127,9 +127,10 @@
             this.ptb2.AccessibleDescription = "";
             this.ptb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptb2.Image = global::DoAn1_10122390.Properties.Resources._9;
-            this.ptb2.Location = new System.Drawing.Point(542, -1);
+            this.ptb2.Location = new System.Drawing.Point(482, -1);
+            this.ptb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptb2.Name = "ptb2";
-            this.ptb2.Size = new System.Drawing.Size(48, 48);
+            this.ptb2.Size = new System.Drawing.Size(43, 38);
             this.ptb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb2.TabIndex = 58;
             this.ptb2.TabStop = false;
@@ -138,19 +139,19 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(167, 310);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(148, 248);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 157);
+            this.pictureBox2.Size = new System.Drawing.Size(235, 126);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 59;
             this.pictureBox2.TabStop = false;
             // 
             // gioithieudanhgia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 481);
+            this.ClientSize = new System.Drawing.Size(545, 385);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ptb2);
             this.Controls.Add(this.pictureBox1);
@@ -161,6 +162,8 @@
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.lb1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "gioithieudanhgia";
             this.Text = "gioithieudanhgia";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

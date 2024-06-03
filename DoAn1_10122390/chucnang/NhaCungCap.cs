@@ -55,7 +55,7 @@ namespace DoAn1_10122390
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             loaddgv();
-            if ((Quyen.tk == "admin" && Quyen.mk == "admin") || (Quyen.tk == "123" && Quyen.mk == "123"))
+            if ((Quyen.tk == "admin") || (Quyen.tk == "123"))
             {
                 MessageBox.Show("Chào mừng Quản Lý", "Chào Mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

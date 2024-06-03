@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nhanvien));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnbang = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btXoa = new Guna.UI2.WinForms.Guna2Button();
             this.dgvNhanvien = new System.Windows.Forms.DataGridView();
+            this.btSua = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.btMoi = new Guna.UI2.WinForms.Guna2Button();
+            this.bttThem = new Guna.UI2.WinForms.Guna2Button();
             this.pnthongtin = new Guna.UI2.WinForms.Guna2Panel();
             this.dtNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,12 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbtimkiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btMoi = new Guna.UI2.WinForms.Guna2Button();
-            this.bttThem = new Guna.UI2.WinForms.Guna2Button();
             this.btTimkiem = new Guna.UI2.WinForms.Guna2Button();
             this.pnbang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).BeginInit();
@@ -82,18 +82,85 @@
             this.pnbang.Size = new System.Drawing.Size(535, 506);
             this.pnbang.TabIndex = 36;
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = global::DoAn1_10122390.Properties.Resources.tiền;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(55, 55);
+            this.guna2Button2.Location = new System.Drawing.Point(248, 447);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(235, 47);
+            this.guna2Button2.TabIndex = 9;
+            this.guna2Button2.Text = "&Lương Thưởng";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.BorderThickness = 2;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
+            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageSize = new System.Drawing.Size(55, 55);
+            this.guna2Button1.Location = new System.Drawing.Point(28, 447);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(209, 47);
+            this.guna2Button1.TabIndex = 8;
+            this.guna2Button1.Text = "&Chấm Công ";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btXoa.BorderRadius = 15;
+            this.btXoa.BorderThickness = 2;
+            this.btXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btXoa.FillColor = System.Drawing.Color.Transparent;
+            this.btXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btXoa.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.Image")));
+            this.btXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btXoa.ImageSize = new System.Drawing.Size(35, 35);
+            this.btXoa.Location = new System.Drawing.Point(346, 394);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(137, 47);
+            this.btXoa.TabIndex = 5;
+            this.btXoa.Text = "&Xóa";
+            this.btXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
             // dgvNhanvien
             // 
             this.dgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvNhanvien.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNhanvien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhanvien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNhanvien.Location = new System.Drawing.Point(3, 48);
             this.dgvNhanvien.Name = "dgvNhanvien";
             this.dgvNhanvien.RowHeadersWidth = 50;
@@ -101,6 +168,28 @@
             this.dgvNhanvien.Size = new System.Drawing.Size(529, 334);
             this.dgvNhanvien.TabIndex = 0;
             this.dgvNhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanvien_CellClick);
+            // 
+            // btSua
+            // 
+            this.btSua.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btSua.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btSua.BorderRadius = 15;
+            this.btSua.BorderThickness = 2;
+            this.btSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSua.FillColor = System.Drawing.Color.Transparent;
+            this.btSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btSua.Image = ((System.Drawing.Image)(resources.GetObject("btSua.Image")));
+            this.btSua.ImageSize = new System.Drawing.Size(46, 46);
+            this.btSua.Location = new System.Drawing.Point(28, 394);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(115, 47);
+            this.btSua.TabIndex = 6;
+            this.btSua.Text = "&Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // label8
             // 
@@ -111,6 +200,48 @@
             this.label8.Size = new System.Drawing.Size(235, 43);
             this.label8.TabIndex = 1;
             this.label8.Text = "Nhân Viên";
+            // 
+            // btMoi
+            // 
+            this.btMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btMoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btMoi.BorderRadius = 15;
+            this.btMoi.BorderThickness = 2;
+            this.btMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btMoi.FillColor = System.Drawing.Color.Transparent;
+            this.btMoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.btMoi.Image = ((System.Drawing.Image)(resources.GetObject("btMoi.Image")));
+            this.btMoi.ImageSize = new System.Drawing.Size(40, 40);
+            this.btMoi.Location = new System.Drawing.Point(476, 3);
+            this.btMoi.Name = "btMoi";
+            this.btMoi.Size = new System.Drawing.Size(43, 43);
+            this.btMoi.TabIndex = 4;
+            this.btMoi.Click += new System.EventHandler(this.btMoi_Click);
+            // 
+            // bttThem
+            // 
+            this.bttThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.bttThem.BorderRadius = 15;
+            this.bttThem.BorderThickness = 2;
+            this.bttThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bttThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bttThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bttThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bttThem.FillColor = System.Drawing.Color.Transparent;
+            this.bttThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.bttThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
+            this.bttThem.Image = ((System.Drawing.Image)(resources.GetObject("bttThem.Image")));
+            this.bttThem.ImageSize = new System.Drawing.Size(40, 40);
+            this.bttThem.Location = new System.Drawing.Point(189, 394);
+            this.bttThem.Name = "bttThem";
+            this.bttThem.Size = new System.Drawing.Size(136, 47);
+            this.bttThem.TabIndex = 7;
+            this.bttThem.Text = "&Thêm";
+            this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
             // 
             // pnthongtin
             // 
@@ -204,6 +335,7 @@
             this.tbDiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbDiachi.Name = "tbDiachi";
             this.tbDiachi.PasswordChar = '\0';
+            this.tbDiachi.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbDiachi.PlaceholderText = "Địa chỉ nhân viên...................................";
             this.tbDiachi.SelectedText = "";
             this.tbDiachi.Size = new System.Drawing.Size(283, 38);
@@ -228,6 +360,7 @@
             this.tbSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.PasswordChar = '\0';
+            this.tbSDT.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbSDT.PlaceholderText = "Nhập số điện thoại ...........................";
             this.tbSDT.SelectedText = "";
             this.tbSDT.Size = new System.Drawing.Size(283, 38);
@@ -252,6 +385,7 @@
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
+            this.tbEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbEmail.PlaceholderText = "Nhập email nhân viên.............................................";
             this.tbEmail.SelectedText = "";
             this.tbEmail.Size = new System.Drawing.Size(283, 38);
@@ -276,6 +410,7 @@
             this.tbTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTen.Name = "tbTen";
             this.tbTen.PasswordChar = '\0';
+            this.tbTen.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbTen.PlaceholderText = "Nhập tên nhân viên..........................................";
             this.tbTen.SelectedText = "";
             this.tbTen.Size = new System.Drawing.Size(283, 38);
@@ -396,7 +531,7 @@
             this.tbtimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbtimkiem.Name = "tbtimkiem";
             this.tbtimkiem.PasswordChar = '\0';
-            this.tbtimkiem.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.tbtimkiem.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.tbtimkiem.PlaceholderText = "Nhập từ khóa tìm kiếm .........................\r\n";
             this.tbtimkiem.SelectedText = "";
             this.tbtimkiem.Size = new System.Drawing.Size(333, 45);
@@ -407,137 +542,6 @@
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::DoAn1_10122390.Properties.Resources.tiền;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button2.Location = new System.Drawing.Point(248, 447);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(235, 47);
-            this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "&Lương Thưởng";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkCyan;
-            this.guna2Button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button1.Location = new System.Drawing.Point(28, 447);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(209, 47);
-            this.guna2Button1.TabIndex = 8;
-            this.guna2Button1.Text = "&Chấm Công ";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // btXoa
-            // 
-            this.btXoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btXoa.BorderRadius = 15;
-            this.btXoa.BorderThickness = 2;
-            this.btXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btXoa.FillColor = System.Drawing.Color.Transparent;
-            this.btXoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btXoa.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.Image")));
-            this.btXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btXoa.Location = new System.Drawing.Point(346, 394);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(137, 47);
-            this.btXoa.TabIndex = 5;
-            this.btXoa.Text = "&Xóa";
-            this.btXoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btSua.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btSua.BorderRadius = 15;
-            this.btSua.BorderThickness = 2;
-            this.btSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btSua.FillColor = System.Drawing.Color.Transparent;
-            this.btSua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btSua.Image = ((System.Drawing.Image)(resources.GetObject("btSua.Image")));
-            this.btSua.ImageSize = new System.Drawing.Size(46, 46);
-            this.btSua.Location = new System.Drawing.Point(28, 394);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(115, 47);
-            this.btSua.TabIndex = 6;
-            this.btSua.Text = "&Sửa";
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
-            // btMoi
-            // 
-            this.btMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btMoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btMoi.BorderRadius = 15;
-            this.btMoi.BorderThickness = 2;
-            this.btMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btMoi.FillColor = System.Drawing.Color.Transparent;
-            this.btMoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.btMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.btMoi.Image = ((System.Drawing.Image)(resources.GetObject("btMoi.Image")));
-            this.btMoi.ImageSize = new System.Drawing.Size(40, 40);
-            this.btMoi.Location = new System.Drawing.Point(476, 3);
-            this.btMoi.Name = "btMoi";
-            this.btMoi.Size = new System.Drawing.Size(43, 43);
-            this.btMoi.TabIndex = 4;
-            this.btMoi.Click += new System.EventHandler(this.btMoi_Click);
-            // 
-            // bttThem
-            // 
-            this.bttThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.bttThem.BorderRadius = 15;
-            this.bttThem.BorderThickness = 2;
-            this.bttThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bttThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bttThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bttThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bttThem.FillColor = System.Drawing.Color.Transparent;
-            this.bttThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.bttThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(76)))));
-            this.bttThem.Image = ((System.Drawing.Image)(resources.GetObject("bttThem.Image")));
-            this.bttThem.ImageSize = new System.Drawing.Size(40, 40);
-            this.bttThem.Location = new System.Drawing.Point(189, 394);
-            this.bttThem.Name = "bttThem";
-            this.bttThem.Size = new System.Drawing.Size(136, 47);
-            this.bttThem.TabIndex = 7;
-            this.bttThem.Text = "&Thêm";
-            this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
             // 
             // btTimkiem
             // 

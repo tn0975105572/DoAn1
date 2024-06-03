@@ -8,6 +8,7 @@ using DAL;
 using System.Data;
 using System.Security.Policy;
 using System.Data.SqlClient;
+using DocumentFormat.OpenXml.Bibliography;
 
 
 namespace BUS
@@ -44,6 +45,15 @@ namespace BUS
                 return Convert.ToInt32(dt.Rows[0]["MaxMaSanPham"]);
             }
             return 0;
+        }
+        public object GetTongDoanhThu(DateTime startDate, DateTime endDate)
+        {
+            return tk.GetTongDoanhThu(startDate, endDate);
+        }
+
+        public DataTable GetTopSanPhamBanChay(DateTime startDate, DateTime endDate)
+        {
+            return tk.GetTopSanPhamBanChay(startDate, endDate);
         }
     }
 }

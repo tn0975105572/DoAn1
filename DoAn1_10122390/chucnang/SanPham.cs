@@ -226,5 +226,19 @@ namespace DoAn1_10122390
 
         }
 
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            string keyword = guna2TextBox1.Text;
+            DataTable searchResult = BUS.Timsp(keyword);
+
+            if (searchResult.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy Sản Phẩm nào phù hợp với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dgvSanpham.DataSource = searchResult;
+            }
+        }
     }
 }

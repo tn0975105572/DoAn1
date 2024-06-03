@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using DTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAn1_10122390
 {
@@ -44,6 +45,13 @@ namespace DoAn1_10122390
         }
         private void Menu_Load(object sender, EventArgs e)
         {
+            toolTip1.SetToolTip(this.btnThongtin, "Click or Nhấn  Ctrl + T để Quản Lý Tài Khoản");
+            toolTip1.SetToolTip(this.btnNhanvien, "Click or Nhấn Ctrl + N để Quản Lý Nhân Viên");
+            toolTip1.SetToolTip(this.guna2Button2, "Click or Nhấn Ctrl + S để Quản Lý Khách Hàng");
+            toolTip1.SetToolTip(this.guna2Button9, "Click or Nhấn CTRL+ D để Quản Lý Sản Phẩm");
+            toolTip1.SetToolTip(this.btnNhacungcap, "Click or Nhấn CTRL + E để Quản Lý Nhà Cung Cấp");
+            toolTip1.SetToolTip(this.btnMua, "Click or Nhấn Ctrl + F để Mua");
+            toolTip1.SetToolTip(this.btnThongke, "Click or Nhấn Ctrl + G để Thống Kê-Báo Cáo");
 
         }
 
@@ -249,6 +257,39 @@ namespace DoAn1_10122390
             else
             {
                 panelmenu.Controls.Clear();
+            }
+
+        }
+
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.T:
+                        btnThongtin.PerformClick();
+                        break;
+                    case Keys.N:
+                        btnNhanvien.PerformClick();
+                        break;
+                    case Keys.S:
+                        guna2Button2.PerformClick();
+                        break;
+                    case Keys.D:
+                        guna2Button9.PerformClick();
+                        break;
+                    case Keys.E:
+                        btnNhacungcap.PerformClick();
+                        break;
+                    case Keys.F:
+                        btnMua.PerformClick();
+                        break;
+                    case Keys.G:
+                        btnThongke.PerformClick();
+                        break;
+                   
+                }
             }
 
         }

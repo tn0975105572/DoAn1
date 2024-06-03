@@ -175,6 +175,29 @@ namespace DoAn1_10122390
                 }
             }
 
+            
+            string maGiamGia = cbbmagiamgia.SelectedValue.ToString();
+            switch (maGiamGia)
+            {
+                case "1":
+                    tongTien -= 10000;
+                    break;
+                case "2":
+                    tongTien -= 25000;
+                    break;
+                case "3":
+                    tongTien -= 50000;
+                    break;
+                case "4":
+                    tongTien -= 100000;
+                    break;
+                default:
+                    break;
+            }
+            if (tongTien < 0)
+            {
+                tongTien = 0;
+            }
             tbTong.Text = tongTien.ToString();
             return tongTien;
         }
@@ -310,14 +333,10 @@ namespace DoAn1_10122390
 
         }
 
-        private void dtNgay_ValueChanged(object sender, EventArgs e)
+
+        private void cbbmagiamgia_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbbmanhanvien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            TinhTongTien();
         }
     }
 

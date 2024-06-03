@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LuongNhanVien));
             this.tool = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tbtimkiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -131,6 +132,7 @@
             this.dgvLuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLuong.Location = new System.Drawing.Point(2, 299);
             this.dgvLuong.Name = "dgvLuong";
+            this.dgvLuong.ReadOnly = true;
             this.dgvLuong.RowHeadersVisible = false;
             this.dgvLuong.RowHeadersWidth = 51;
             this.dgvLuong.RowTemplate.Height = 24;
@@ -149,7 +151,7 @@
             this.dgvLuong.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvLuong.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvLuong.ThemeStyle.HeaderStyle.Height = 18;
-            this.dgvLuong.ThemeStyle.ReadOnly = false;
+            this.dgvLuong.ThemeStyle.ReadOnly = true;
             this.dgvLuong.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLuong.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLuong.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -411,6 +413,7 @@
             this.Controls.Add(this.btthem);
             this.Controls.Add(this.ptb2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LuongNhanVien";
             this.Text = "LuongNhanVien";
             this.Load += new System.EventHandler(this.LuongNhanVien_Load);
